@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Julia & Daniel | Hochzeitswochenende</title>
+    <meta
+      name="description"
+      content="Eine mehrsprachige Hochzeitswebsite für Julia und Daniel."
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="https://use.typekit.net/eot6kmk.css">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="Julia and Daniel home">J + D</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a href="#weekend" data-i18n="nav.weekend">Wochenende</a>
+        <a href="#story" data-i18n="nav.story">Geschichte</a>
+        <a href="#travel" data-i18n="nav.travel">Anreise</a>
+        <a href="#calendar" data-i18n="nav.calendar">Kalender</a>
+        <a href="#hotels" data-i18n="nav.hotels">Hotels</a>
+        <a href="#rsvp">RSVP</a>
+        <div class="language-switcher" aria-label="Language selector">
+          <button type="button" data-lang="de" aria-pressed="true">DE</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+          <button type="button" data-lang="es" aria-pressed="false">ES</button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="couple-names">
+        <div class="hero-status">
+          <p data-i18n="hero.status">Save the date</p>
+        </div>
+        <div class="hero-copy">
+          <h1 id="couple-names">
+            <span>JULIA</span>
+            <small>&</small>
+            <span>DANIEL</span>
+          </h1>
+        </div>
+        <div class="hero-date">
+          <p data-i18n="hero.dateLocation">7. August 2027<br>Strobl, AT</p>
+        </div>
+        <a class="hero-rsvp" href="#rsvp" data-i18n="hero.rsvp">RSVP bis 1. Juli 2027</a>
+      </section>
+
+      <section class="weekend-panel" id="weekend" aria-labelledby="weekend-title">
+        <div class="panel-title">
+          <h2 id="weekend-title" data-i18n="weekend.title">Das<br>Wochenende</h2>
+        </div>
+        <div class="events" aria-label="Wedding weekend events">
+          <article class="event-day">
+            <h3 data-i18n="events.friday">Freitag, 6. August</h3>
+            <div class="event-item">
+              <p data-i18n="events.welcome"><strong>Willkommensparty</strong> | 18:00 - 20:00</p>
+              <p data-i18n="events.locationTba">Location folgt</p>
+              <p data-i18n="events.map"><a href="https://maps.app.goo.gl/RWy8xYNb6xHkX5Hu6">Karte zur Hochzeitslocation öffnen</a></p>
+            </div>
+          </article>
+
+          <article class="event-day">
+            <h3 data-i18n="events.saturday">Samstag, 7. August</h3>
+            <div class="event-item">
+              <p data-i18n="events.ceremony"><strong>Trauung</strong> | 17:30</p>
+              <p data-i18n="events.venue"><a href="https://maps.app.goo.gl/RWy8xYNb6xHkX5Hu6">Hochzeitslocation</a></p>
+              <p data-i18n="events.exactMap">Die genaue Adresse findet ihr in der Karte</p>
+            </div>
+            <div class="event-item">
+              <p data-i18n="events.reception"><strong>Feier</strong> | 18:15</p>
+              <p data-i18n="events.venue"><a href="https://maps.app.goo.gl/RWy8xYNb6xHkX5Hu6">Hochzeitslocation</a></p>
+              <p data-i18n="events.dinner">Abendessen, Reden und Tanzen bis spät</p>
+            </div>
+          </article>
+
+          <article class="event-day">
+            <h3 data-i18n="events.sunday">Sonntag, 8. August</h3>
+            <div class="event-item">
+              <p data-i18n="events.brunch"><strong>Brunch</strong> | 11:30</p>
+              <p data-i18n="events.locationTba">Location folgt</p>
+              <p data-i18n="events.coffee">Ein letzter Kaffee, bevor alle nach Hause fahren</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="story-section" id="story" aria-labelledby="story-title">
+        <p class="section-label" data-i18n="story.label">Unsere Geschichte</p>
+        <h2 id="story-title" data-i18n="story.title">Ein paar Worte vor dem großen Tag.</h2>
+        <p data-i18n="story.body">
+          Hier kann später Julias und Daniels Geschichte stehen: wie sie sich
+          kennengelernt haben, was dieses Wochenende bedeutet und warum sie es
+          mit euch feiern möchten.
+        </p>
+      </section>
+
+      <section class="travel-section" id="travel" aria-labelledby="travel-title">
+        <div>
+          <p class="section-label" data-i18n="travel.label">Anreise</p>
+          <h2 id="travel-title" data-i18n="travel.title">Kommt entspannt an und bleibt in der Nähe.</h2>
+        </div>
+        <div class="travel-list">
+          <article>
+            <h3 data-i18n="travel.stayTitle">Übernachten</h3>
+            <p data-i18n="travel.stayBody">Hotelvorschläge und Zimmerinfos für Julias und Daniels Gäste werden hier ergänzt.</p>
+          </article>
+          <article>
+            <h3 data-i18n="travel.moveTitle">Hinkommen</h3>
+            <p data-i18n="travel.moveBody">Details zur Anreise und zu möglichen Shuttles werden hier hinzugefügt.</p>
+          </article>
+          <article>
+            <h3 data-i18n="travel.wearTitle">Dresscode</h3>
+            <p data-i18n="travel.wearBody">Festlich. Farbe, Freude und bequeme Tanzschuhe sind sehr willkommen.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="calendar-section" id="calendar" aria-labelledby="calendar-title">
+        <div class="calendar-board">
+          <div class="calendar-intro">
+            <p class="calendar-label" data-i18n="calendar.label">Save the dates</p>
+            <h2 id="calendar-title" data-i18n="calendar.title">August<br>2027</h2>
+          </div>
+          <div class="calendar-card" aria-label="Wedding calendar">
+            <div class="calendar-month" data-i18n="calendar.month">August 2027</div>
+            <div class="calendar-weekdays" aria-hidden="true">
+              <span data-i18n="calendar.mon">Mo</span>
+              <span data-i18n="calendar.tue">Di</span>
+              <span data-i18n="calendar.wed">Mi</span>
+              <span data-i18n="calendar.thu">Do</span>
+              <span data-i18n="calendar.fri">Fr</span>
+              <span data-i18n="calendar.sat">Sa</span>
+              <span data-i18n="calendar.sun">So</span>
+            </div>
+            <div class="calendar-grid">
+              <span class="calendar-empty" aria-hidden="true"></span>
+              <span class="calendar-empty" aria-hidden="true"></span>
+              <span class="calendar-empty" aria-hidden="true"></span>
+              <span class="calendar-empty" aria-hidden="true"></span>
+              <span class="calendar-empty" aria-hidden="true"></span>
+              <span class="calendar-empty" aria-hidden="true"></span>
+              <span class="calendar-stay">1</span>
+              <span class="calendar-stay">2</span>
+              <span class="calendar-stay">3</span>
+              <span class="calendar-stay">4</span>
+              <span class="calendar-stay">5</span>
+              <span class="calendar-mark calendar-stay">
+                6
+                <small data-i18n="calendar.welcome">Willkommen</small>
+              </span>
+              <span class="calendar-mark is-main calendar-stay">
+                7
+                <small data-i18n="calendar.wedding">Hochzeit</small>
+              </span>
+              <span class="calendar-mark calendar-stay">
+                8
+                <small data-i18n="calendar.brunch">Brunch</small>
+              </span>
+              <span>9</span>
+              <span>10</span>
+              <span>11</span>
+              <span>12</span>
+              <span>13</span>
+              <span>14</span>
+              <span>15</span>
+              <span>16</span>
+              <span>17</span>
+              <span>18</span>
+              <span>19</span>
+              <span>20</span>
+              <span>21</span>
+              <span>22</span>
+              <span>23</span>
+              <span>24</span>
+              <span>25</span>
+              <span>26</span>
+              <span>27</span>
+              <span>28</span>
+              <span>29</span>
+              <span>30</span>
+              <span>31</span>
+            </div>
+            <p class="calendar-note" data-i18n="calendar.note">
+              Julia und Daniel sind vom 1. bis 8. August vor Ort. Die Hochzeit findet am Samstag, 7. August 2027 statt.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="hotel-section" id="hotels" aria-labelledby="hotels-title">
+        <div class="hotel-board">
+          <p class="hotel-label" data-i18n="hotels.label">Hotel Liste</p>
+          <h2 id="hotels-title" data-i18n="hotels.title">Hotels</h2>
+          <p class="hotel-date" data-i18n="hotels.subtitle">Empfehlungen für euren Aufenthalt</p>
+
+          <div class="hotel-table" role="table" aria-label="Hotel recommendations">
+            <div class="hotel-row hotel-head" role="row">
+              <span role="columnheader" data-i18n="hotels.hotel">Hotel</span>
+              <span role="columnheader" data-i18n="hotels.area">Ort</span>
+              <span role="columnheader" data-i18n="hotels.distance">Distanz</span>
+              <span role="columnheader" data-i18n="hotels.note">Info</span>
+              <span role="columnheader" data-i18n="hotels.link">Link</span>
+            </div>
+            <div class="hotel-row" role="row">
+              <span class="hotel-name" role="cell">Hotel Am Park</span>
+              <span role="cell" data-i18n="hotels.areaOne">Nahe der Location</span>
+              <span role="cell">8 min</span>
+              <span role="cell" data-i18n="hotels.noteOne">Zimmerblock angefragt</span>
+              <a class="hotel-link" role="cell" href="https://www.google.com/search?q=Hotel+Am+Park" target="_blank" rel="noopener" data-i18n="hotels.linkText">Website</a>
+            </div>
+            <div class="hotel-row" role="row">
+              <span class="hotel-name" role="cell">Boutique Hotel Rosenhof</span>
+              <span role="cell" data-i18n="hotels.areaTwo">Innenstadt</span>
+              <span role="cell">15 min</span>
+              <span role="cell" data-i18n="hotels.noteTwo">Sehr schön für Paare</span>
+              <a class="hotel-link" role="cell" href="https://www.google.com/search?q=Boutique+Hotel+Rosenhof" target="_blank" rel="noopener" data-i18n="hotels.linkText">Website</a>
+            </div>
+            <div class="hotel-row" role="row">
+              <span class="hotel-name" role="cell">Gasthof Zur Linde</span>
+              <span role="cell" data-i18n="hotels.areaThree">Ruhige Lage</span>
+              <span role="cell">20 min</span>
+              <span role="cell" data-i18n="hotels.noteThree">Familienfreundlich</span>
+              <a class="hotel-link" role="cell" href="https://www.google.com/search?q=Gasthof+Zur+Linde" target="_blank" rel="noopener" data-i18n="hotels.linkText">Website</a>
+            </div>
+            <div class="hotel-row" role="row">
+              <span class="hotel-name" role="cell">City Apartments</span>
+              <span role="cell" data-i18n="hotels.areaFour">Zentrum</span>
+              <span role="cell">18 min</span>
+              <span role="cell" data-i18n="hotels.noteFour">Gut für Gruppen</span>
+              <a class="hotel-link" role="cell" href="https://www.google.com/search?q=City+Apartments" target="_blank" rel="noopener" data-i18n="hotels.linkText">Website</a>
+            </div>
+          </div>
+
+          <p class="hotel-small" data-i18n="hotels.small">
+            Bitte bucht frühzeitig. Genauere Links und Preise können hier später ergänzt werden.
+          </p>
+        </div>
+      </section>
+
+      <section class="rsvp-section" id="rsvp" aria-labelledby="rsvp-title">
+        <div>
+          <p class="section-label">RSVP</p>
+          <h2 id="rsvp-title" data-i18n="rsvp.title">Seid ihr dabei?</h2>
+        </div>
+        <form class="rsvp-form" aria-label="Sample RSVP form">
+          <label>
+            <span data-i18n="rsvp.name">Name</span>
+            <input type="text" name="name" placeholder="Euer Name" data-i18n-placeholder="rsvp.namePlaceholder">
+          </label>
+          <label>
+            <span data-i18n="rsvp.email">E-Mail</span>
+            <input type="email" name="email" placeholder="you@example.com" data-i18n-placeholder="rsvp.emailPlaceholder">
+          </label>
+          <label>
+            <span data-i18n="rsvp.response">Antwort</span>
+            <select name="response">
+              <option data-i18n="rsvp.accept">Wir sind gerne dabei</option>
+              <option data-i18n="rsvp.decline">Leider können wir nicht kommen</option>
+            </select>
+          </label>
+          <button type="submit" data-i18n="rsvp.button">RSVP senden</button>
+          <p class="form-note" data-form-note aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Julia & Daniel</span>
+      <a href="#top" data-i18n="footer.top">Nach oben</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
