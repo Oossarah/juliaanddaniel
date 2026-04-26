@@ -11,6 +11,7 @@
   --mono: "ballinger-mono", "Inter", Arial, sans-serif;
   --mono-weight: 500;
   --mono-spacing: 0.42em;
+  --hero-mono-size: clamp(0.75rem, 1.125vw, 1.075rem);
 }
 
 * {
@@ -52,9 +53,10 @@ a {
 .text-link,
 .rsvp-form button,
 .site-footer {
-  font-size: clamp(0.78rem, 1vw, 0.92rem);
+  font-size: var(--hero-mono-size);
+  font-family: var(--mono);
   font-weight: var(--mono-weight);
-  letter-spacing: var(--mono-spacing);
+  letter-spacing: calc(var(--mono-spacing) * 0.5);
   text-transform: uppercase;
   text-decoration: none;
 }
@@ -127,8 +129,10 @@ a {
   position: relative;
   min-height: calc(100vh - 82px);
   display: grid;
-  place-items: center;
-  padding: clamp(92px, 10vw, 132px) clamp(24px, 5vw, 72px) clamp(82px, 9vw, 118px);
+  grid-template-columns: minmax(140px, 1fr) auto minmax(140px, 1fr);
+  gap: clamp(22px, 5vw, 72px);
+  align-items: center;
+  padding: clamp(96px, 10vw, 138px) clamp(24px, 5vw, 72px) clamp(90px, 9vw, 126px);
   background: var(--blush);
   overflow: hidden;
 }
@@ -142,19 +146,18 @@ a {
 }
 
 .hero-status {
-  position: absolute;
-  top: clamp(34px, 6vw, 76px);
-  left: 50%;
-  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
   text-align: center;
 }
 
 .hero-status p,
-.hero-date p {
+.hero-date p,
+.hero-rsvp {
   margin: 0;
   color: var(--red);
   font-family: var(--mono);
-  font-size: clamp(0.82rem, 1.25vw, 1.2rem);
+  font-size: var(--hero-mono-size);
   font-weight: var(--mono-weight);
   letter-spacing: var(--mono-spacing);
   line-height: 1.55;
@@ -162,20 +165,17 @@ a {
 }
 
 .hero-date {
-  position: absolute;
-  left: 50%;
-  bottom: clamp(84px, 8vw, 118px);
-  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
   text-align: center;
-}
-
-.hero-date p {
-  font-size: clamp(0.66rem, 0.9vw, 0.8rem);
-  letter-spacing: var(--mono-spacing);
 }
 
 .hero-date a {
   text-decoration: none;
+}
+
+.hero-status span {
+  display: block;
 }
 
 .eyebrow,
@@ -200,10 +200,10 @@ h1 {
   display: grid;
   margin: 0;
   font-family: var(--serif);
-  font-size: clamp(5.8rem, 13.4vw, 11.2rem);
+  font-size: clamp(6.2rem, 14vw, 12rem);
   font-weight: 400;
   letter-spacing: 0.045em;
-  line-height: 0.84;
+  line-height: 0.82;
   text-align: center;
 }
 
@@ -232,13 +232,7 @@ h1 small {
   padding: 0 24px;
   border: 1.5px solid currentColor;
   border-radius: 999px;
-  color: var(--red);
-  font-family: var(--mono);
-  font-size: 0.74rem;
-  font-weight: var(--mono-weight);
-  letter-spacing: var(--mono-spacing);
   text-decoration: none;
-  text-transform: uppercase;
   white-space: nowrap;
 }
 
@@ -782,6 +776,7 @@ h1 small {
   }
 
   .hero {
+    grid-template-columns: 1fr;
     min-height: 94vh;
     padding: 108px 20px 92px;
   }
@@ -794,25 +789,14 @@ h1 small {
     font-size: 0.64em;
   }
 
-  .hero-status p {
-    font-size: 0.74rem;
-    letter-spacing: var(--mono-spacing);
-  }
-
   .hero-date {
-    bottom: 72px;
-  }
-
-  .hero-date p {
-    font-size: 0.58rem;
-    letter-spacing: 0.16em;
+    display: flex;
   }
 
   .hero-rsvp {
     bottom: 26px;
     max-width: calc(100vw - 40px);
     padding-inline: 18px;
-    font-size: 0.68rem;
   }
 
   .panel-title h2 {
