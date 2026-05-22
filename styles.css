@@ -672,7 +672,17 @@ h1 small {
 .form-note {
   min-height: 24px;
   margin: 0;
+  color: var(--red);
   font-weight: 800;
+}
+
+.rsvp-target {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 0;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .site-footer {

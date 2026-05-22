@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="5200" viewBox="0 0 1440 5200">
+  <defs>
+    <style>
+      .bg { fill: #f3dcd7; }
+      .light { fill: #f8e8e5; }
+      .red { fill: #ff241f; }
+      .dark { fill: #4b140f; }
+      .serif { font-family: "moret", Georgia, serif; }
+      .mono { font-family: "ballinger-mono", "Inter", Arial, sans-serif; letter-spacing: 12px; text-transform: uppercase; }
+      .sans { font-family: "Inter", Arial, sans-serif; }
+      .line-red { stroke: #ff241f; stroke-width: 2; fill: none; }
+      .line-dark { stroke: #4b140f; stroke-width: 2; fill: none; }
+      .line-light { stroke: #f8e8e5; stroke-width: 2; fill: none; }
+    </style>
+  </defs>
+
+  <rect width="1440" height="5200" class="bg"/>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="1440" height="82" class="light"/>
+  <line x1="0" y1="82" x2="1440" y2="82" class="line-red"/>
+  <text x="56" y="52" class="serif red" font-size="28">J + D</text>
+  <text x="720" y="52" class="mono red" font-size="14" text-anchor="middle">WOCHENENDE   GESCHICHTE   ANREISE   KALENDER   HOTELS   RSVP   DE / EN / ES</text>
+
+  <!-- Hero -->
+  <rect x="0" y="82" width="1440" height="850" class="bg"/>
+  <text x="720" y="168" class="mono red" font-size="32" font-weight="500" text-anchor="middle">SAVE THE DATE</text>
+  <text x="720" y="470" class="serif red" font-size="202" font-weight="400" text-anchor="middle">JULIA</text>
+  <text x="720" y="610" class="serif red" font-size="138" font-style="italic" font-weight="400" text-anchor="middle">&amp;</text>
+  <text x="720" y="790" class="serif red" font-size="202" font-weight="400" text-anchor="middle">DANIEL</text>
+  <text x="720" y="860" class="mono red" font-size="18" text-anchor="middle">7. AUGUST 2027 · STROBL, AT</text>
+  <rect x="563" y="884" width="314" height="48" rx="24" class="line-red"/>
+  <text x="720" y="915" class="mono red" font-size="14" text-anchor="middle">RSVP BIS 1. JULI 2027</text>
+
+  <!-- Weekend -->
+  <rect x="0" y="932" width="1440" height="760" class="light"/>
+  <text x="110" y="1140" class="serif red" font-size="112" font-weight="400">Das</text>
+  <text x="110" y="1240" class="serif red" font-size="112" font-weight="400">Wochenende</text>
+  <text x="760" y="1100" class="serif red" font-size="56" font-weight="400">Freitag, 6. August</text>
+  <text x="760" y="1160" class="sans red" font-size="26" font-weight="700">Willkommensparty | 18:00 - 20:00</text>
+  <text x="760" y="1202" class="sans red" font-size="24">Location folgt</text>
+  <text x="760" y="1300" class="serif red" font-size="56" font-weight="400">Samstag, 7. August</text>
+  <text x="760" y="1360" class="sans red" font-size="26" font-weight="700">Trauung | 17:30</text>
+  <text x="760" y="1402" class="sans red" font-size="24">Hochzeitslocation</text>
+  <text x="760" y="1468" class="sans red" font-size="26" font-weight="700">Feier | 18:15</text>
+  <text x="760" y="1510" class="sans red" font-size="24">Abendessen, Reden und Tanzen bis spät</text>
+  <text x="760" y="1604" class="serif red" font-size="56" font-weight="400">Sonntag, 8. August</text>
+  <text x="760" y="1664" class="sans red" font-size="26" font-weight="700">Brunch | 11:30</text>
+
+  <!-- Story -->
+  <rect x="0" y="1692" width="1440" height="560" class="red"/>
+  <text x="110" y="1842" class="mono light" font-size="18">UNSERE GESCHICHTE</text>
+  <text x="110" y="1990" class="serif light" font-size="86" font-weight="400">Ein paar Worte</text>
+  <text x="110" y="2070" class="serif light" font-size="86" font-weight="400">vor dem großen Tag.</text>
+  <text x="800" y="1975" class="sans light" font-size="30" font-weight="700">Hier kann später Julias und Daniels Geschichte stehen:</text>
+  <text x="800" y="2020" class="sans light" font-size="30" font-weight="700">wie sie sich kennengelernt haben, was dieses</text>
+  <text x="800" y="2065" class="sans light" font-size="30" font-weight="700">Wochenende bedeutet und warum sie es feiern möchten.</text>
+
+  <!-- Travel -->
+  <rect x="0" y="2252" width="1440" height="640" class="bg"/>
+  <text x="110" y="2420" class="mono red" font-size="18">ANREISE</text>
+  <text x="110" y="2560" class="serif red" font-size="82" font-weight="400">Kommt entspannt an</text>
+  <text x="110" y="2640" class="serif red" font-size="82" font-weight="400">und bleibt in der Nähe.</text>
+  <line x1="840" y1="2400" x2="1320" y2="2400" class="line-red"/>
+  <text x="840" y="2468" class="serif red" font-size="44">Übernachten</text>
+  <text x="840" y="2516" class="sans red" font-size="24" font-weight="700">Hotelvorschläge und Zimmerinfos werden hier ergänzt.</text>
+  <line x1="840" y1="2590" x2="1320" y2="2590" class="line-red"/>
+  <text x="840" y="2658" class="serif red" font-size="44">Hinkommen</text>
+  <text x="840" y="2706" class="sans red" font-size="24" font-weight="700">Details zur Anreise und Shuttles werden hier hinzugefügt.</text>
+
+  <!-- Calendar -->
+  <rect x="0" y="2892" width="1440" height="820" class="red"/>
+  <text x="110" y="3060" class="mono light" font-size="18">SAVE THE DATES</text>
+  <text x="110" y="3200" class="serif light" font-size="116" font-weight="400">August</text>
+  <text x="110" y="3310" class="serif light" font-size="116" font-weight="400">2027</text>
+  <rect x="610" y="3030" width="710" height="530" fill="none" stroke="#f8e8e5" stroke-width="2"/>
+  <text x="965" y="3095" class="mono light" font-size="18" text-anchor="middle">AUGUST 2027</text>
+  <line x1="610" y1="3130" x2="1320" y2="3130" class="line-light"/>
+  <text x="660" y="3180" class="mono light" font-size="14">MO</text>
+  <text x="760" y="3180" class="mono light" font-size="14">DI</text>
+  <text x="860" y="3180" class="mono light" font-size="14">MI</text>
+  <text x="960" y="3180" class="mono light" font-size="14">DO</text>
+  <text x="1060" y="3180" class="mono light" font-size="14">FR</text>
+  <text x="1160" y="3180" class="mono light" font-size="14">SA</text>
+  <text x="1260" y="3180" class="mono light" font-size="14">SO</text>
+  <rect x="610" y="3205" width="710" height="355" fill="none" stroke="#f8e8e5" stroke-width="2" opacity="0.7"/>
+  <rect x="1210" y="3305" width="100" height="80" class="dark"/>
+  <text x="1260" y="3354" class="mono red" font-size="22" text-anchor="middle">7</text>
+  <text x="1260" y="3378" class="mono red" font-size="10" text-anchor="middle">HOCHZEIT</text>
+  <text x="965" y="3650" class="mono light" font-size="15" text-anchor="middle">JULIA UND DANIEL SIND VOM 1. BIS 8. AUGUST VOR ORT.</text>
+
+  <!-- Hotels -->
+  <rect x="0" y="3712" width="1440" height="820" class="dark"/>
+  <text x="720" y="3865" class="mono red" font-size="18" text-anchor="middle">HOTEL LISTE</text>
+  <text x="720" y="3990" class="serif red" font-size="98" font-weight="400" text-anchor="middle">Hotels</text>
+  <line x1="110" y1="4080" x2="1330" y2="4080" class="line-red"/>
+  <line x1="110" y1="4135" x2="1330" y2="4135" class="line-red"/>
+  <text x="130" y="4118" class="mono red" font-size="15">HOTEL</text>
+  <text x="560" y="4118" class="mono red" font-size="15">ORT</text>
+  <text x="760" y="4118" class="mono red" font-size="15">DISTANZ</text>
+  <text x="930" y="4118" class="mono red" font-size="15">INFO</text>
+  <text x="1210" y="4118" class="mono red" font-size="15">LINK</text>
+  <text x="130" y="4210" class="serif red" font-size="36" font-style="italic">Hotel Am Park</text>
+  <text x="560" y="4210" class="sans red" font-size="20" font-weight="700">Nahe der Location</text>
+  <text x="760" y="4210" class="sans red" font-size="20" font-weight="700">8 min</text>
+  <text x="930" y="4210" class="sans red" font-size="20" font-weight="700">Zimmerblock angefragt</text>
+  <rect x="1190" y="4180" width="116" height="38" rx="19" class="line-red"/>
+  <text x="1248" y="4205" class="mono red" font-size="12" text-anchor="middle">WEBSITE</text>
+  <line x1="110" y1="4260" x2="1330" y2="4260" class="line-red"/>
+  <text x="130" y="4335" class="serif red" font-size="36" font-style="italic">Boutique Hotel Rosenhof</text>
+  <text x="560" y="4335" class="sans red" font-size="20" font-weight="700">Innenstadt</text>
+  <text x="760" y="4335" class="sans red" font-size="20" font-weight="700">15 min</text>
+  <text x="930" y="4335" class="sans red" font-size="20" font-weight="700">Sehr schön für Paare</text>
+  <rect x="1190" y="4305" width="116" height="38" rx="19" class="line-red"/>
+  <text x="1248" y="4330" class="mono red" font-size="12" text-anchor="middle">WEBSITE</text>
+
+  <!-- RSVP -->
+  <rect x="0" y="4532" width="1440" height="668" class="light"/>
+  <text x="110" y="4700" class="mono red" font-size="18">RSVP</text>
+  <text x="110" y="4845" class="serif red" font-size="96" font-weight="400">Seid ihr dabei?</text>
+  <rect x="850" y="4680" width="420" height="56" rx="28" class="line-red"/>
+  <text x="880" y="4715" class="mono red" font-size="14">EUER NAME</text>
+  <rect x="850" y="4760" width="420" height="56" rx="28" class="line-red"/>
+  <text x="880" y="4795" class="mono red" font-size="14">IHR@EXAMPLE.COM</text>
+  <rect x="850" y="4840" width="420" height="56" rx="28" class="line-red"/>
+  <text x="880" y="4875" class="mono red" font-size="14">WIR SIND GERNE DABEI</text>
+  <rect x="850" y="4930" width="420" height="58" rx="29" class="red"/>
+  <text x="1060" y="4968" class="mono light" font-size="14" text-anchor="middle">RSVP SENDEN</text>
+</svg>

@@ -82,8 +82,13 @@ const translations = {
     "rsvp.response": "Antwort",
     "rsvp.accept": "Wir sind gerne dabei",
     "rsvp.decline": "Leider können wir nicht kommen",
+    "rsvp.children": "Kinder",
+    "rsvp.withoutChildren": "Wir kommen ohne Kinder",
+    "rsvp.withChildren": "Wir kommen mit Kindern",
+    "rsvp.stay": "Zeitraum",
+    "rsvp.stayPlaceholder": "z. B. 6. - 8. August",
     "rsvp.button": "RSVP senden",
-    "rsvp.thanks": "Danke. Diese Demo-Nachricht kann später mit einem echten RSVP verbunden werden.",
+    "rsvp.thanks": "Danke, euer RSVP wurde gesendet.",
     "footer.top": "Nach oben"
   },
   en: {
@@ -162,8 +167,13 @@ const translations = {
     "rsvp.response": "Response",
     "rsvp.accept": "Joyfully accepts",
     "rsvp.decline": "Regretfully declines",
+    "rsvp.children": "Children",
+    "rsvp.withoutChildren": "We are coming without children",
+    "rsvp.withChildren": "We are coming with children",
+    "rsvp.stay": "Dates",
+    "rsvp.stayPlaceholder": "e.g. August 6 - 8",
     "rsvp.button": "Send RSVP",
-    "rsvp.thanks": "Thank you. This demo message can later be connected to a real RSVP.",
+    "rsvp.thanks": "Thank you, your RSVP has been sent.",
     "footer.top": "Back to top"
   },
   es: {
@@ -242,8 +252,13 @@ const translations = {
     "rsvp.response": "Respuesta",
     "rsvp.accept": "Aceptamos con alegria",
     "rsvp.decline": "Lamentablemente no podemos asistir",
+    "rsvp.children": "Ninos",
+    "rsvp.withoutChildren": "Venimos sin ninos",
+    "rsvp.withChildren": "Venimos con ninos",
+    "rsvp.stay": "Fechas",
+    "rsvp.stayPlaceholder": "p. ej. 6 - 8 de agosto",
     "rsvp.button": "Enviar RSVP",
-    "rsvp.thanks": "Gracias. Este mensaje de demo se podra conectar mas adelante a un RSVP real.",
+    "rsvp.thanks": "Gracias, vuestra respuesta ha sido enviada.",
     "footer.top": "Volver arriba"
   }
 };
@@ -296,9 +311,13 @@ languageButtons.forEach((button) => {
   });
 });
 
-form?.addEventListener("submit", (event) => {
-  event.preventDefault();
-  formNote.textContent = translations[activeLanguage]["rsvp.thanks"];
+form?.addEventListener("submit", () => {
+  if (formNote) {
+    formNote.textContent = translations[activeLanguage]["rsvp.thanks"];
+  }
+  window.setTimeout(() => {
+    form.reset();
+  }, 600);
 });
 
 window.addEventListener(

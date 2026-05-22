@@ -254,14 +254,14 @@
           <p class="section-label">RSVP</p>
           <h2 id="rsvp-title" data-i18n="rsvp.title">Seid ihr dabei?</h2>
         </div>
-        <form class="rsvp-form" aria-label="Sample RSVP form">
+        <form class="rsvp-form" action="https://script.google.com/macros/s/AKfycbxHD2I3fNwNVO555JI9tgG1sOiueRkbh1-VCzL0NBkzeKZIy1B5s3WLbadi1v8WAA7q/exec" method="POST" target="rsvp-target" aria-label="RSVP form">
           <label>
             <span data-i18n="rsvp.name">Name</span>
-            <input type="text" name="name" placeholder="Euer Name" data-i18n-placeholder="rsvp.namePlaceholder">
+            <input type="text" name="name" placeholder="Euer Name" data-i18n-placeholder="rsvp.namePlaceholder" required>
           </label>
           <label>
             <span data-i18n="rsvp.email">E-Mail</span>
-            <input type="email" name="email" placeholder="you@example.com" data-i18n-placeholder="rsvp.emailPlaceholder">
+            <input type="email" name="email" placeholder="you@example.com" data-i18n-placeholder="rsvp.emailPlaceholder" required>
           </label>
           <label>
             <span data-i18n="rsvp.response">Antwort</span>
@@ -270,9 +270,21 @@
               <option data-i18n="rsvp.decline">Leider können wir nicht kommen</option>
             </select>
           </label>
+          <label>
+            <span data-i18n="rsvp.children">Kinder</span>
+            <select name="children">
+              <option data-i18n="rsvp.withoutChildren">Wir kommen ohne Kinder</option>
+              <option data-i18n="rsvp.withChildren">Wir kommen mit Kindern</option>
+            </select>
+          </label>
+          <label>
+            <span data-i18n="rsvp.stay">Zeitraum</span>
+            <input type="text" name="stay" placeholder="z. B. 6. - 8. August" data-i18n-placeholder="rsvp.stayPlaceholder">
+          </label>
           <button type="submit" data-i18n="rsvp.button">RSVP senden</button>
           <p class="form-note" data-form-note aria-live="polite"></p>
         </form>
+        <iframe class="rsvp-target" name="rsvp-target" title="RSVP submission"></iframe>
       </section>
     </main>
 
