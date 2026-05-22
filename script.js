@@ -85,8 +85,8 @@ const translations = {
     "rsvp.children": "Kinder",
     "rsvp.withoutChildren": "Wir kommen ohne Kinder",
     "rsvp.withChildren": "Wir kommen mit Kindern",
-    "rsvp.stay": "Zeitraum",
-    "rsvp.stayPlaceholder": "z. B. 6. - 8. August",
+    "rsvp.message": "Nachricht",
+    "rsvp.messagePlaceholder": "wir kommen von x. - x. August",
     "rsvp.button": "RSVP senden",
     "rsvp.thanks": "Danke, euer RSVP wurde gesendet.",
     "footer.top": "Nach oben"
@@ -170,8 +170,8 @@ const translations = {
     "rsvp.children": "Children",
     "rsvp.withoutChildren": "We are coming without children",
     "rsvp.withChildren": "We are coming with children",
-    "rsvp.stay": "Dates",
-    "rsvp.stayPlaceholder": "e.g. August 6 - 8",
+    "rsvp.message": "Message",
+    "rsvp.messagePlaceholder": "we will be there from x - x August",
     "rsvp.button": "Send RSVP",
     "rsvp.thanks": "Thank you, your RSVP has been sent.",
     "footer.top": "Back to top"
@@ -255,8 +255,8 @@ const translations = {
     "rsvp.children": "Ninos",
     "rsvp.withoutChildren": "Venimos sin ninos",
     "rsvp.withChildren": "Venimos con ninos",
-    "rsvp.stay": "Fechas",
-    "rsvp.stayPlaceholder": "p. ej. 6 - 8 de agosto",
+    "rsvp.message": "Mensaje",
+    "rsvp.messagePlaceholder": "estaremos alli del x al x de agosto",
     "rsvp.button": "Enviar RSVP",
     "rsvp.thanks": "Gracias, vuestra respuesta ha sido enviada.",
     "footer.top": "Volver arriba"
