@@ -1,6 +1,8 @@
 document.documentElement.classList.add("js");
 
 const languageButton = document.querySelector(".language-toggle");
+const menuButton = document.querySelector(".menu-toggle");
+const navigationLinks = document.querySelectorAll(".nav-links a");
 const translatable = document.querySelectorAll("[data-de][data-en]");
 const form = document.querySelector("#rsvpForm");
 const statusMessage = document.querySelector("#formStatus");
@@ -21,6 +23,18 @@ function setLanguage(nextLanguage) {
 
 languageButton.addEventListener("click", () => {
   setLanguage(language === "de" ? "en" : "de");
+});
+
+menuButton?.addEventListener("click", () => {
+  const menuOpen = document.body.classList.toggle("menu-open");
+  menuButton.setAttribute("aria-expanded", String(menuOpen));
+});
+
+navigationLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    document.body.classList.remove("menu-open");
+    menuButton?.setAttribute("aria-expanded", "false");
+  });
 });
 
 if (infoSection && "IntersectionObserver" in window) {
