@@ -1,298 +1,251 @@
 <!doctype html>
 <html lang="de">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Julia & Daniel | Hochzeitswochenende</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Daniel & Julia - Wedding</title>
     <meta
       name="description"
-      content="Eine mehrsprachige Hochzeitswebsite für Julia und Daniel."
-    >
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      content="Wedding website for Julia and Daniel in Strobl, Austria."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libertinus+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
       rel="stylesheet"
-    >
-    <link rel="stylesheet" href="https://use.typekit.net/eot6kmk.css">
-    <link rel="stylesheet" href="styles.css">
+    />
+    <link rel="stylesheet" href="https://use.typekit.net/eot6kmk.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="site-header" data-header>
-      <a class="brand" href="#top" aria-label="Julia and Daniel home">J + D</a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-        <span></span>
-        <span></span>
-      </button>
-      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
-        <a href="#weekend" data-i18n="nav.weekend">Wochenende</a>
-        <a href="#story" data-i18n="nav.story">Geschichte</a>
-        <a href="#travel" data-i18n="nav.travel">Anreise</a>
-        <a href="#calendar" data-i18n="nav.calendar">Kalender</a>
-        <a href="#hotels" data-i18n="nav.hotels">Hotels</a>
-        <a href="#rsvp">RSVP</a>
-        <div class="language-switcher" aria-label="Language selector">
-          <button type="button" data-lang="de" aria-pressed="true">DE</button>
-          <button type="button" data-lang="en" aria-pressed="false">EN</button>
-          <button type="button" data-lang="es" aria-pressed="false">ES</button>
+    <header class="site-header" aria-label="Hauptnavigation">
+      <nav class="nav-shell">
+        <a class="brand" href="#home" data-de="Daniel & Julia" data-en="Daniel & Julia">Daniel & Julia</a>
+        <div class="nav-links" aria-label="Sections">
+          <a href="#story" data-de="Über uns" data-en="Our story">Über uns</a>
+          <a href="#weekend" data-de="Wochenende" data-en="Weekend">Wochenende</a>
+          <a href="#infos" data-de="Infos" data-en="Info">Infos</a>
+          <a href="#hotels" data-de="Hotels" data-en="Hotels">Hotels</a>
+          <a href="#rsvp" data-de="RSVP" data-en="RSVP">RSVP</a>
         </div>
+        <button class="language-toggle" type="button" aria-label="Switch language">EN</button>
       </nav>
     </header>
 
-    <main id="top">
-      <section class="hero" aria-labelledby="couple-names">
-        <div class="hero-status">
-          <p data-i18n="hero.status"><span>We are getting</span><span>married</span></p>
+    <main>
+      <section class="hero section" id="home" aria-label="Start">
+        <div class="hero-marquee" aria-hidden="true">
+          <div class="hero-marquee-track">
+            <span>We’re getting married</span>
+            <span class="marquee-heart">♥</span>
+            <span>We’re getting married</span>
+            <span class="marquee-heart">♥</span>
+            <span>We’re getting married</span>
+            <span class="marquee-heart">♥</span>
+            <span>We’re getting married</span>
+            <span class="marquee-heart">♥</span>
+            <span>We’re getting married</span>
+            <span class="marquee-heart">♥</span>
+            <span>We’re getting married</span>
+            <span class="marquee-heart">♥</span>
+            <span>We’re getting married</span>
+            <span class="marquee-heart">♥</span>
+            <span>We’re getting married</span>
+            <span class="marquee-heart">♥</span>
+          </div>
         </div>
-        <div class="hero-copy">
-          <h1 id="couple-names">
-            <span>JULIA</span>
-            <small>&</small>
-            <span>DANIEL</span>
-          </h1>
-        </div>
-        <div class="hero-date">
-          <p data-i18n="hero.dateLocation">7. August 2027<br>Strobl, AT</p>
-        </div>
-        <a class="hero-rsvp" href="#rsvp" data-i18n="hero.rsvp">RSVP bis 1. Juli 2027</a>
-      </section>
-
-      <section class="weekend-panel" id="weekend" aria-labelledby="weekend-title">
-        <div class="panel-title">
-          <h2 id="weekend-title" data-i18n="weekend.title">Das<br>Wochenende</h2>
-        </div>
-        <div class="events" aria-label="Wedding weekend events">
-          <article class="event-day">
-            <h3 data-i18n="events.friday">Freitag, 6. August</h3>
-            <div class="event-item">
-              <p data-i18n="events.welcome"><strong>Willkommensparty</strong> | 18:00 - 20:00</p>
-              <p data-i18n="events.locationTba">Location folgt</p>
-              <p data-i18n="events.map"><a href="https://maps.app.goo.gl/RWy8xYNb6xHkX5Hu6">Karte zur Hochzeitslocation öffnen</a></p>
-            </div>
-          </article>
-
-          <article class="event-day">
-            <h3 data-i18n="events.saturday">Samstag, 7. August</h3>
-            <div class="event-item">
-              <p data-i18n="events.ceremony"><strong>Trauung</strong> | 17:30</p>
-              <p data-i18n="events.venue"><a href="https://maps.app.goo.gl/RWy8xYNb6xHkX5Hu6">Hochzeitslocation</a></p>
-              <p data-i18n="events.exactMap">Die genaue Adresse findet ihr in der Karte</p>
-            </div>
-            <div class="event-item">
-              <p data-i18n="events.reception"><strong>Feier</strong> | 18:15</p>
-              <p data-i18n="events.venue"><a href="https://maps.app.goo.gl/RWy8xYNb6xHkX5Hu6">Hochzeitslocation</a></p>
-              <p data-i18n="events.dinner">Abendessen, Reden und Tanzen bis spät</p>
-            </div>
-          </article>
-
-          <article class="event-day">
-            <h3 data-i18n="events.sunday">Sonntag, 8. August</h3>
-            <div class="event-item">
-              <p data-i18n="events.brunch"><strong>Brunch</strong> | 11:30</p>
-              <p data-i18n="events.locationTba">Location folgt</p>
-              <p data-i18n="events.coffee">Ein letzter Kaffee, bevor alle nach Hause fahren</p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="story-section" id="story" aria-labelledby="story-title">
-        <p class="section-label" data-i18n="story.label">Unsere Geschichte</p>
-        <h2 id="story-title" data-i18n="story.title">Ein paar Worte vor dem großen Tag.</h2>
-        <p data-i18n="story.body">
-          Hier kann später Julias und Daniels Geschichte stehen: wie sie sich
-          kennengelernt haben, was dieses Wochenende bedeutet und warum sie es
-          mit euch feiern möchten.
+        <p class="hero-kicker left" data-de="We’re getting<br />married" data-en="We’re getting<br />married">We’re getting<br />married</p>
+        <h1>Julia<br /><span>&amp;</span><br />Daniel</h1>
+        <p class="hero-kicker right" data-de="7. August 2027<br />Strobl, AUT" data-en="August 7, 2027<br />Strobl, AUT">
+          7. August 2027<br />Strobl, AUT
         </p>
+        <a class="hero-rsvp" href="#rsvp" data-de="RSVP bis<br />1. Februar 2027" data-en="RSVP by<br />February 1, 2027">
+          RSVP bis<br />1. Februar 2027
+        </a>
       </section>
 
-      <section class="travel-section" id="travel" aria-labelledby="travel-title">
-        <div>
-          <p class="section-label" data-i18n="travel.label">Anreise</p>
-          <h2 id="travel-title" data-i18n="travel.title">Kommt entspannt an und bleibt in der Nähe.</h2>
-        </div>
-        <div class="travel-list">
-          <article>
-            <h3 data-i18n="travel.stayTitle">Übernachten</h3>
-            <p data-i18n="travel.stayBody">Hotelvorschläge und Zimmerinfos für Julias und Daniels Gäste werden hier ergänzt.</p>
-          </article>
-          <article>
-            <h3 data-i18n="travel.moveTitle">Hinkommen</h3>
-            <p data-i18n="travel.moveBody">Details zur Anreise und zu möglichen Shuttles werden hier hinzugefügt.</p>
-          </article>
-          <article>
-            <h3 data-i18n="travel.wearTitle">Dresscode</h3>
-            <p data-i18n="travel.wearBody">Festlich. Farbe, Freude und bequeme Tanzschuhe sind sehr willkommen.</p>
-          </article>
-        </div>
-      </section>
+      <section class="story section" id="story">
+        <aside class="sticky-title">
+          <h2 data-de="Our<br />Story" data-en="Our<br />Story">Our<br />Story</h2>
+        </aside>
+        <div class="story-column">
+          <p data-de="Julia und Dan begegneten einander 2016 zum ersten Mal in einem Start-up-Inkubator in Shenzhen, hoch über den geschäftigen Elektronikmärkten von Huaqiangbei. Für Dan war Julia diese große, ernste Österreicherin, die mit klarer Mission durchs Büro stapfte und ihre Bug-Experimente pflegte." data-en="Julia and Dan first encountered each other in 2016 at a start-up incubator in Shenzhen, high above the bustling electronics markets of Huaqiangbei. To Dan, Julia was the tall, serious Austrian who moved through the office with purpose, tending to her bug experiments.">
+            Julia und Dan begegneten einander 2016 zum ersten Mal in einem
+            Start-up-Inkubator in Shenzhen, hoch über den geschäftigen
+            Elektronikmärkten von Huaqiangbei. Für Dan war Julia diese große,
+            ernste Österreicherin, die mit klarer Mission durchs Büro stapfte
+            und ihre Bug-Experimente pflegte.
+          </p>
+          <img class="story-photo photo-soft" src="assets/story-park.png" alt="Julia und Daniel am Wasser" />
 
-      <section class="calendar-section" id="calendar" aria-labelledby="calendar-title">
-        <div class="calendar-board">
-          <div class="calendar-intro">
-            <p class="calendar-label" data-i18n="calendar.label">Save the dates</p>
-            <h2 id="calendar-title" data-i18n="calendar.title">August<br>2027</h2>
-          </div>
-          <div class="calendar-card" aria-label="Wedding calendar">
-            <div class="calendar-month" data-i18n="calendar.month">August 2027</div>
-            <div class="calendar-weekdays" aria-hidden="true">
-              <span data-i18n="calendar.mon">Mo</span>
-              <span data-i18n="calendar.tue">Di</span>
-              <span data-i18n="calendar.wed">Mi</span>
-              <span data-i18n="calendar.thu">Do</span>
-              <span data-i18n="calendar.fri">Fr</span>
-              <span data-i18n="calendar.sat">Sa</span>
-              <span data-i18n="calendar.sun">So</span>
-            </div>
-            <div class="calendar-grid">
-              <span class="calendar-empty" aria-hidden="true"></span>
-              <span class="calendar-empty" aria-hidden="true"></span>
-              <span class="calendar-empty" aria-hidden="true"></span>
-              <span class="calendar-empty" aria-hidden="true"></span>
-              <span class="calendar-empty" aria-hidden="true"></span>
-              <span class="calendar-empty" aria-hidden="true"></span>
-              <span class="calendar-stay">1</span>
-              <span class="calendar-stay">2</span>
-              <span class="calendar-stay">3</span>
-              <span class="calendar-stay">4</span>
-              <span class="calendar-stay">5</span>
-              <span class="calendar-mark calendar-stay">
-                6
-                <small data-i18n="calendar.welcome">Willkommen</small>
-              </span>
-              <span class="calendar-mark is-main calendar-stay">
-                7
-                <small data-i18n="calendar.wedding">Hochzeit</small>
-              </span>
-              <span class="calendar-mark calendar-stay">
-                8
-                <small data-i18n="calendar.brunch">Brunch</small>
-              </span>
-              <span>9</span>
-              <span>10</span>
-              <span>11</span>
-              <span>12</span>
-              <span>13</span>
-              <span>14</span>
-              <span>15</span>
-              <span>16</span>
-              <span>17</span>
-              <span>18</span>
-              <span>19</span>
-              <span>20</span>
-              <span>21</span>
-              <span>22</span>
-              <span>23</span>
-              <span>24</span>
-              <span>25</span>
-              <span>26</span>
-              <span>27</span>
-              <span>28</span>
-              <span>29</span>
-              <span>30</span>
-              <span>31</span>
-            </div>
-            <p class="calendar-note" data-i18n="calendar.note">
-              Julia und Daniel sind vom 1. bis 8. August vor Ort. Die Hochzeit findet am Samstag, 7. August 2027 statt.
-            </p>
-          </div>
-        </div>
-      </section>
+          <p data-de="Für Julia war Dan dieser haarige Amerikaner, der herumalberte, alle zum Lachen brachte und ständig verrückte Sanitärtests mit Ameisen in der Hose durchführte. China war aber nicht nur Arbeit. Bald entstand eine kleine Crew für Abenteuer: lange Fahrradtouren zum Strand, Mountainbiking in Hong Kong, nächtliche Streifzüge durch Elektronikmärkte und Abende mit Streetfood und Bier." data-en="To Julia, Dan was the hairy American goofing around, making everyone laugh and running wild plumbing tests. But China was not all work. A crew quickly formed for adventures: long bike rides to the beach, mountain biking in Hong Kong, night-time electronic market trips, street food and beer.">
+            Für Julia war Dan dieser haarige Amerikaner, der herumalberte, alle
+            zum Lachen brachte und ständig verrückte Sanitärtests mit Ameisen in
+            der Hose durchführte. China war aber nicht nur Arbeit. Bald
+            entstand eine kleine Crew für Abenteuer: lange Fahrradtouren zum
+            Strand, Mountainbiking in Hong Kong, nächtliche Streifzüge durch
+            Elektronikmärkte und Abende mit Streetfood und Bier.
+          </p>
+          <img class="story-photo photo-round" src="assets/story-harbor.png" alt="Julia küsst Daniel vor der Skyline von Hong Kong" />
 
-      <section class="hotel-section" id="hotels" aria-labelledby="hotels-title">
-        <div class="hotel-board">
-          <p class="hotel-label" data-i18n="hotels.label">Hotel Liste</p>
-          <h2 id="hotels-title" data-i18n="hotels.title">Hotels</h2>
-          <p class="hotel-date" data-i18n="hotels.subtitle">Empfehlungen für euren Aufenthalt</p>
+          <p data-de="Obwohl Julia sich anfangs zierte, wurde ihre Sparsamkeit ihr Verhängnis, als sie bei einem frisch frei gewordenen Zimmer in Dans WG nicht Nein sagen konnte. Von dort aus wurde aus Nähe Vertrautheit und aus langen Gesprächen schließlich ein gemeinsamer Plan." data-en="While Julia resisted initial courtship, her frugality proved to be her downfall when she could not pass up the cheap rent of a newly available room in Dan's shared flat. From there, closeness turned into trust and long talks slowly became a shared plan.">
+            Obwohl Julia sich anfangs zierte, wurde ihre Sparsamkeit ihr
+            Verhängnis, als sie bei einem frisch frei gewordenen Zimmer in Dans
+            WG nicht Nein sagen konnte. Von dort aus wurde aus Nähe Vertrautheit
+            und aus langen Gesprächen schließlich ein gemeinsamer Plan.
+          </p>
+          <img class="story-photo photo-tall" src="assets/story-beach.png" alt="Julia und Daniel am Strand" />
 
-          <div class="hotel-table" role="table" aria-label="Hotel recommendations">
-            <div class="hotel-row hotel-head" role="row">
-              <span role="columnheader" data-i18n="hotels.hotel">Hotel</span>
-              <span role="columnheader" data-i18n="hotels.area">Ort</span>
-              <span role="columnheader" data-i18n="hotels.distance">Distanz</span>
-              <span role="columnheader" data-i18n="hotels.note">Info</span>
-              <span role="columnheader" data-i18n="hotels.link">Link</span>
-            </div>
-            <div class="hotel-row" role="row">
-              <span class="hotel-name" role="cell">Hotel Am Park</span>
-              <span role="cell" data-i18n="hotels.areaOne">Nahe der Location</span>
-              <span role="cell">8 min</span>
-              <span role="cell" data-i18n="hotels.noteOne">Zimmerblock angefragt</span>
-              <a class="hotel-link" role="cell" href="https://www.google.com/search?q=Hotel+Am+Park" target="_blank" rel="noopener" data-i18n="hotels.linkText">Website</a>
-            </div>
-            <div class="hotel-row" role="row">
-              <span class="hotel-name" role="cell">Boutique Hotel Rosenhof</span>
-              <span role="cell" data-i18n="hotels.areaTwo">Innenstadt</span>
-              <span role="cell">15 min</span>
-              <span role="cell" data-i18n="hotels.noteTwo">Sehr schön für Paare</span>
-              <a class="hotel-link" role="cell" href="https://www.google.com/search?q=Boutique+Hotel+Rosenhof" target="_blank" rel="noopener" data-i18n="hotels.linkText">Website</a>
-            </div>
-            <div class="hotel-row" role="row">
-              <span class="hotel-name" role="cell">Gasthof Zur Linde</span>
-              <span role="cell" data-i18n="hotels.areaThree">Ruhige Lage</span>
-              <span role="cell">20 min</span>
-              <span role="cell" data-i18n="hotels.noteThree">Familienfreundlich</span>
-              <a class="hotel-link" role="cell" href="https://www.google.com/search?q=Gasthof+Zur+Linde" target="_blank" rel="noopener" data-i18n="hotels.linkText">Website</a>
-            </div>
-            <div class="hotel-row" role="row">
-              <span class="hotel-name" role="cell">City Apartments</span>
-              <span role="cell" data-i18n="hotels.areaFour">Zentrum</span>
-              <span role="cell">18 min</span>
-              <span role="cell" data-i18n="hotels.noteFour">Gut für Gruppen</span>
-              <a class="hotel-link" role="cell" href="https://www.google.com/search?q=City+Apartments" target="_blank" rel="noopener" data-i18n="hotels.linkText">Website</a>
-            </div>
-          </div>
-
-          <p class="hotel-small" data-i18n="hotels.small">
-            Bitte bucht frühzeitig. Genauere Links und Preise können hier später ergänzt werden.
+          <p data-de="Die Fernbeziehung musste irgendwann enden. Julia hielt ihre Präsentation, warum Wien der richtige Ort für eine gemeinsame Familie wäre, und es dauerte nicht lange, bis Dan seine spanische Staatsbürgerschaft zurückforderte und sich auf Wien, geregelte Mieten und sehr viel Zukunft einließ. An einem kalten, nebligen Dezembermorgen im Wienerwald fragte Dan schließlich, ob Julia ihn heiraten möchte." data-en="Long distance had to come to an end at some point. Julia made her pitch for why Vienna was the right place to build a family, and before long Dan was reclaiming his Spanish citizenship and committing to Vienna, stable rent and a lot of future. On a cold, misty December morning in the Wienerwald, Dan finally asked Julia to marry him.">
+            Die Fernbeziehung musste irgendwann enden. Julia hielt ihre
+            Präsentation, warum Wien der richtige Ort für eine gemeinsame
+            Familie wäre, und es dauerte nicht lange, bis Dan seine spanische
+            Staatsbürgerschaft zurückforderte und sich auf Wien, geregelte
+            Mieten und sehr viel Zukunft einließ. An einem kalten, nebligen
+            Dezembermorgen im Wienerwald fragte Dan schließlich, ob Julia ihn
+            heiraten möchte.
           </p>
         </div>
       </section>
 
-      <section class="rsvp-section" id="rsvp" aria-labelledby="rsvp-title">
-        <div>
-          <p class="section-label">RSVP</p>
-          <h2 id="rsvp-title" data-i18n="rsvp.title">Seid ihr dabei?</h2>
+      <section class="weekend section" id="weekend">
+        <h2 data-de="Das<br />Wochen-<br />ende" data-en="The<br />Weekend">Das<br />Wochen-<br />ende</h2>
+        <div class="timeline">
+          <article>
+            <p class="date" data-de="Freitag, 6. August" data-en="Friday, August 6">Freitag, 6. August</p>
+            <h3 data-de="Standesamtliche Trauung" data-en="Civil Ceremony">Standesamtliche Trauung</h3>
+            <p data-de="Location: Gemeindeamt Strobl.<br />Vormittag, genaue Uhrzeit wird noch bekannt gegeben. Ihr seid alle herzlich eingeladen. Bitte beachtet, dass der Trausaal nur über eine begrenzte Anzahl an Sitzplätzen verfügt, aber es gibt genug Platz für alle, um an diesem freudigen Ereignis teilzuhaben." data-en="Location: Gemeindeamt Strobl.<br />Morning, exact time to be announced. You are all warmly invited. Please note that the ceremony room has limited seating, but there will be enough space for everyone to join this joyful moment.">
+              Location: Gemeindeamt Strobl.<br />Vormittag, genaue Uhrzeit wird noch
+              bekannt gegeben. Ihr seid alle herzlich eingeladen. Bitte beachtet,
+              dass der Trausaal nur über eine begrenzte Anzahl an Sitzplätzen
+              verfügt, aber es gibt genug Platz für alle, um an diesem freudigen
+              Ereignis teilzuhaben.
+            </p>
+          </article>
+          <article>
+            <p class="date" data-de="Samstag, 7. August" data-en="Saturday, August 7">Samstag, 7. August</p>
+            <h3 data-de="The Big Day" data-en="The Big Day">The Big Day</h3>
+            <p data-de="Location: Laimer Urschlag.<br />Wir können es kaum erwarten, unsere Liebe zu feiern und mit all unseren Liebsten die Nacht durchzufeiern!" data-en="Location: Laimer Urschlag.<br />We cannot wait to celebrate our love and dance through the night with the people we love most!">
+              Location: Laimer Urschlag.<br />Wir können es kaum erwarten, unsere
+              Liebe zu feiern und mit all unseren Liebsten die Nacht
+              durchzufeiern!
+            </p>
+            <dl class="schedule">
+              <div><dt>14:00</dt><dd data-de="Trauung" data-en="Ceremony">Trauung</dd></div>
+              <div><dt>15:00</dt><dd data-de="Gruppenfoto & Cocktailempfang" data-en="Group photo & cocktail reception">Gruppenfoto & Cocktailempfang</dd></div>
+              <div><dt>17:00</dt><dd data-de="Abendessen" data-en="Dinner">Abendessen</dd></div>
+              <div><dt>18:00</dt><dd data-de="Partytime" data-en="Party time">Partytime</dd></div>
+            </dl>
+          </article>
+          <article>
+            <p class="date" data-de="8. August - 12. August" data-en="August 8 - August 12">8. August - 12. August</p>
+            <h3 data-de="Our Lake Getaway" data-en="Our Lake Getaway">Our Lake Getaway</h3>
+            <p data-de="Wir machen aus der Hochzeit einen kleinen Urlaub. Wir bleiben in Strobl, entspannen und erkunden nach dem großen Tag die Region. Kommt gerne für lockere, optionale Aktivitäten dazu - zum Beispiel eine Bootstour am Wolfgangsee oder eine Fahrt aufs Zwölferhorn." data-en="We are turning our wedding into a little vacation. We will be staying in Strobl to relax and explore the region after the big day. Feel free to join us for casual, optional activities like a boat tour on Lake Wolfgangsee or a cable car ride up Zwölferhorn.">
+              Wir machen aus der Hochzeit einen kleinen Urlaub. Wir bleiben in
+              Strobl, entspannen und erkunden nach dem großen Tag die Region.
+              Kommt gerne für lockere, optionale Aktivitäten dazu - zum Beispiel
+              eine Bootstour am Wolfgangsee oder eine Fahrt aufs Zwölferhorn.
+            </p>
+          </article>
         </div>
-        <form class="rsvp-form" action="https://script.google.com/macros/s/AKfycbxHD2I3fNwNVO555JI9tgG1sOiueRkbh1-VCzL0NBkzeKZIy1B5s3WLbadi1v8WAA7q/exec" method="POST" target="rsvp-target" aria-label="RSVP form">
+      </section>
+
+      <section class="infos section" id="infos">
+        <div class="info-shapes">
+          <article class="shape shape-lime">
+            <h3 data-de="Getting<br />There" data-en="Getting<br />There">Getting<br />There</h3>
+            <p data-de="Reisedetails folgen bald." data-en="Travel details will be added here soon.">Reisedetails folgen bald.</p>
+          </article>
+          <article class="shape shape-lilac">
+            <h3 data-de="Dress<br />Code" data-en="Dress<br />Code">Dress<br />Code</h3>
+            <p data-de="Festlich. Farbe, Freude und bequeme Tanzschuhe sind sehr willkommen." data-en="Festive. Color, joy and comfortable dancing shoes are very welcome.">
+              Festlich. Farbe, Freude und bequeme Tanzschuhe sind sehr
+              willkommen.
+            </p>
+          </article>
+          <article class="shape shape-card">
+            <h3 data-de="Important<br />Information!" data-en="Important<br />Information!">Important<br />Information!</h3>
+            <p data-de="Strobl ist im August sehr gut gebucht. Bitte reserviert Hotel oder Pension so bald wie möglich. Wenn ihr Hilfe braucht, sagt uns einfach Bescheid." data-en="Strobl is very well booked in August. Please book a hotel or guest house as soon as possible. Let us know if you need help.">
+              Strobl ist im August sehr gut gebucht. Bitte reserviert Hotel oder
+              Pension so bald wie möglich. Wenn ihr Hilfe braucht, sagt uns
+              einfach Bescheid.
+            </p>
+            <a href="#hotels" class="hotel-jump">
+              <span data-de="Hotel Empfehlung" data-en="Hotel recommendations">Hotel Empfehlung</span>
+              <span class="hotel-jump-icon" aria-hidden="true">↓</span>
+            </a>
+          </article>
+        </div>
+        <h2 data-de="Ankommen<br />Relaxen<br />Nah sein" data-en="Arrive<br />Relax<br />Stay close">
+          Ankommen<br />Relaxen<br />Nah sein
+        </h2>
+      </section>
+
+      <section class="hotels section dark" id="hotels">
+        <h2 data-de="Hotels &<br />Appartements" data-en="Hotels &<br />Apartments">Hotels &<br />Appartements</h2>
+        <p class="section-subtitle" data-de="Empfehlungen für euren Aufenthalt" data-en="Recommendations for your stay">Empfehlungen für euren Aufenthalt</p>
+        <div class="hotel-table" role="table" aria-label="Hotel Empfehlungen">
+          <div class="hotel-row hotel-head" role="row">
+            <span role="columnheader">Hotel</span>
+            <span role="columnheader" data-de="Ort" data-en="Area">Ort</span>
+            <span role="columnheader" data-de="Distanz" data-en="Distance">Distanz</span>
+            <span role="columnheader">Info</span>
+            <span role="columnheader">Link</span>
+          </div>
+          <div class="hotel-row" role="row">
+            <strong>Hotel am Park</strong><span>Innenstadt</span><span>8 min</span><span>Zimmerblock angefragt</span><a href="#" aria-label="Website Hotel am Park">Website</a>
+          </div>
+          <div class="hotel-row" role="row">
+            <strong>Seehaus Strobl</strong><span>Ruhige Lage</span><span>10 min</span><span>Familienzimmer verfügbar</span><a href="#" aria-label="Website Seehaus Strobl">Website</a>
+          </div>
+          <div class="hotel-row" role="row">
+            <strong>Gasthof zur Post</strong><span>Zentrum</span><span>7 min</span><span>Frühstück inklusive</span><a href="#" aria-label="Website Gasthof zur Post">Website</a>
+          </div>
+          <div class="hotel-row" role="row">
+            <strong>Apartment Bergblick</strong><span>Nahe der Location</span><span>6 min</span><span>Ideal für Gruppen</span><a href="#" aria-label="Website Apartment Bergblick">Website</a>
+          </div>
+          <div class="hotel-row" role="row">
+            <strong>Hotel Seerose</strong><span>Am See</span><span>12 min</span><span>Zimmerblock angefragt</span><a href="#" aria-label="Website Hotel Seerose">Website</a>
+          </div>
+          <div class="hotel-row" role="row">
+            <strong>Pension Wolfgang</strong><span>Ort</span><span>8 min</span><span>Gemütlich & zentral</span><a href="#" aria-label="Website Pension Wolfgang">Website</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="rsvp section" id="rsvp">
+        <h2 data-de="Seid ihr<br />dabei?" data-en="Will you<br />join us?">Seid ihr<br />dabei?</h2>
+        <form class="rsvp-form" id="rsvpForm">
           <label>
-            <span data-i18n="rsvp.name">Name</span>
-            <input type="text" name="name" placeholder="Euer Name" data-i18n-placeholder="rsvp.namePlaceholder" required>
+            <span data-de="Name" data-en="Name">Name</span>
+            <input name="name" type="text" placeholder="Euer Name" required />
           </label>
           <label>
-            <span data-i18n="rsvp.email">E-Mail</span>
-            <input type="email" name="email" placeholder="you@example.com" data-i18n-placeholder="rsvp.emailPlaceholder" required>
+            <span data-de="E-Mail" data-en="Email">E-Mail</span>
+            <input name="email" type="email" placeholder="julia.daniel@email.at" required />
           </label>
           <label>
-            <span data-i18n="rsvp.response">Antwort</span>
-            <select name="response">
-              <option data-i18n="rsvp.accept">Wir sind gerne dabei</option>
-              <option data-i18n="rsvp.decline">Leider können wir nicht kommen</option>
+            <span data-de="Antwort" data-en="Reply">Antwort</span>
+            <select name="answer" required>
+              <option value="" data-de="Bitte auswählen" data-en="Please choose">Bitte auswählen</option>
+              <option data-de="Ja, wir sind dabei" data-en="Yes, we will be there">Ja, wir sind dabei</option>
+              <option data-de="Leider nein" data-en="Sadly no">Leider nein</option>
             </select>
           </label>
           <label>
-            <span data-i18n="rsvp.children">Kinder</span>
-            <select name="children">
-              <option data-i18n="rsvp.withoutChildren">Wir kommen ohne Kinder</option>
-              <option data-i18n="rsvp.withChildren">Wir kommen mit Kindern</option>
-            </select>
+            <span data-de="Kinder" data-en="Children">Kinder</span>
+            <input name="children" type="text" placeholder="Anzahl / Namen" />
           </label>
           <label>
-            <span data-i18n="rsvp.message">Nachricht</span>
-            <input type="text" name="stay" placeholder="wir kommen von x. - x. August" data-i18n-placeholder="rsvp.messagePlaceholder">
+            <span data-de="Zeitraum" data-en="Stay">Zeitraum</span>
+            <textarea name="stay" placeholder="Wir kommen von x. bis x.x."></textarea>
           </label>
-          <button type="submit" data-i18n="rsvp.button">RSVP senden</button>
-          <p class="form-note" data-form-note aria-live="polite"></p>
+          <button type="submit" data-de="RSVP senden" data-en="Send RSVP">RSVP senden</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
         </form>
-        <iframe class="rsvp-target" name="rsvp-target" title="RSVP submission"></iframe>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <span>Julia & Daniel</span>
-      <a href="#top" data-i18n="footer.top">Nach oben</a>
-    </footer>
-
-    <script src="script.js?v=20260522"></script>
+    <script src="script.js"></script>
   </body>
 </html>
