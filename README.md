@@ -42,4 +42,36 @@ http://127.0.0.1:4174/
 
 Die Website verwendet externe Fonts von Google Fonts und Adobe Typekit. Dafuer braucht die veroeffentlichte Seite Internetzugriff.
 
-Das RSVP-Formular oeffnet aktuell eine vorausgefuellte E-Mail via `mailto:`. Fuer ein echtes Formular mit Speicherung oder automatischem Versand waere spaeter ein Formular-Service oder Backend noetig.
+Das RSVP-Formular sendet aktuell per `POST` an ein Google-Apps-Script und nutzt ein verstecktes iframe als Ziel, damit die Besucher auf der Website bleiben.
+
+## RSVP mit Google Sheets
+
+Das Ziel-Sheet ist:
+
+```text
+https://docs.google.com/spreadsheets/d/1jmPmD1rBYOvuKitZi2UruszADXGgMgFdmgr6N1ahI1s/edit
+```
+
+Die Datei `google-apps-script-rsvp.gs` enthaelt ein passendes Google Apps Script fuer dieses Sheet.
+
+Im Google Sheet sollten diese Spalten angelegt sein:
+
+```text
+timestamp | name | email | response | children | stay | source
+```
+
+So wird es verbunden:
+
+1. Im Google Sheet auf `Extensions` -> `Apps Script` gehen.
+2. Den Inhalt aus `google-apps-script-rsvp.gs` einfuegen.
+3. Das Script schreibt standardmaessig in das erste Tabellenblatt. Wenn du ein bestimmtes Blatt verwenden willst, kannst du `SHEET_NAME` im Script setzen.
+4. `Deploy` -> `New deployment` -> Typ `Web app` waehlen.
+5. Zugriff auf `Anyone` setzen.
+6. Die Web-App-URL kopieren.
+7. Diese Web-App-URL in `index.html` beim RSVP-Formular als `action="..."` einsetzen.
+
+Wenn du das Apps Script spaeter aenderst, musst du erneut deployen:
+
+```text
+Deploy -> Manage deployments -> Edit -> Version: New version -> Deploy
+```

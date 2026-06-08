@@ -116,17 +116,6 @@
         <h2 data-de="Das<br />Wochen-<br />ende" data-en="The<br />Weekend">Das<br />Wochen-<br />ende</h2>
         <div class="timeline">
           <article>
-            <p class="date" data-de="Freitag, 6. August" data-en="Friday, August 6">Freitag, 6. August</p>
-            <h3 data-de="Standesamtliche Trauung" data-en="Civil Ceremony">Standesamtliche Trauung</h3>
-            <p data-de="Location: Gemeindeamt Strobl.<br />Vormittag, genaue Uhrzeit wird noch bekannt gegeben. Ihr seid alle herzlich eingeladen. Bitte beachtet, dass der Trausaal nur über eine begrenzte Anzahl an Sitzplätzen verfügt, aber es gibt genug Platz für alle, um an diesem freudigen Ereignis teilzuhaben." data-en="Location: Gemeindeamt Strobl.<br />Morning, exact time to be announced. You are all warmly invited. Please note that the ceremony room has limited seating, but there will be enough space for everyone to join this joyful moment.">
-              Location: Gemeindeamt Strobl.<br />Vormittag, genaue Uhrzeit wird noch
-              bekannt gegeben. Ihr seid alle herzlich eingeladen. Bitte beachtet,
-              dass der Trausaal nur über eine begrenzte Anzahl an Sitzplätzen
-              verfügt, aber es gibt genug Platz für alle, um an diesem freudigen
-              Ereignis teilzuhaben.
-            </p>
-          </article>
-          <article>
             <p class="date" data-de="Samstag, 7. August" data-en="Saturday, August 7">Samstag, 7. August</p>
             <h3 data-de="The Big Day" data-en="The Big Day">The Big Day</h3>
             <p data-de="Location: Laimer Urschlag.<br />Wir können es kaum erwarten, unsere Liebe zu feiern und mit all unseren Liebsten die Nacht durchzufeiern!" data-en="Location: Laimer Urschlag.<br />We cannot wait to celebrate our love and dance through the night with the people we love most!">
@@ -219,7 +208,15 @@
 
       <section class="rsvp section" id="rsvp">
         <h2 data-de="Seid ihr<br />dabei?" data-en="Will you<br />join us?">Seid ihr<br />dabei?</h2>
-        <form class="rsvp-form" id="rsvpForm">
+        <form
+          class="rsvp-form"
+          id="rsvpForm"
+          action="https://script.google.com/macros/s/AKfycbycFH4H9teqGFEdZFYJIIBqdklFHcxLt5HzX7Gpfnqr4Fr28DjTTiZJYRZEFF5ipGv2/exec"
+          method="POST"
+          target="rsvp-target"
+          aria-label="RSVP form"
+        >
+          <input type="hidden" name="source" value="julia-daniel-wedding-site" />
           <label>
             <span data-de="Name" data-en="Name">Name</span>
             <input name="name" type="text" placeholder="Euer Name" required />
@@ -230,23 +227,26 @@
           </label>
           <label>
             <span data-de="Antwort" data-en="Reply">Antwort</span>
-            <select name="answer" required>
-              <option value="" data-de="Bitte auswählen" data-en="Please choose">Bitte auswählen</option>
-              <option data-de="Ja, wir sind dabei" data-en="Yes, we will be there">Ja, wir sind dabei</option>
-              <option data-de="Leider nein" data-en="Sadly no">Leider nein</option>
+            <select name="response" required>
+              <option value="Wir sind gerne dabei" data-de="Wir sind gerne dabei" data-en="Joyfully accepts">Wir sind gerne dabei</option>
+              <option value="Leider können wir nicht kommen" data-de="Leider können wir nicht kommen" data-en="Regretfully declines">Leider können wir nicht kommen</option>
             </select>
           </label>
           <label>
             <span data-de="Kinder" data-en="Children">Kinder</span>
-            <input name="children" type="text" placeholder="Anzahl / Namen" />
+            <select name="children">
+              <option value="Wir kommen ohne Kinder" data-de="Wir kommen ohne Kinder" data-en="We are coming without children">Wir kommen ohne Kinder</option>
+              <option value="Wir kommen mit Kindern" data-de="Wir kommen mit Kindern" data-en="We are coming with children">Wir kommen mit Kindern</option>
+            </select>
           </label>
           <label>
             <span data-de="Zeitraum" data-en="Stay">Zeitraum</span>
-            <textarea name="stay" placeholder="Wir kommen von x. bis x.x."></textarea>
+            <textarea name="stay" placeholder="wir wissen noch nicht&#10;wir kommen von x. - x.x."></textarea>
           </label>
           <button type="submit" data-de="RSVP senden" data-en="Send RSVP">RSVP senden</button>
           <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
         </form>
+        <iframe class="rsvp-target" name="rsvp-target" title="RSVP submission"></iframe>
       </section>
     </main>
 

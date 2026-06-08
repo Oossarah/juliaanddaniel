@@ -69,23 +69,13 @@ if (darkSections.length) {
   window.addEventListener("resize", updateNavigationTheme);
 }
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const data = new FormData(form);
-  const subject = encodeURIComponent("RSVP Julia & Daniel");
-  const body = encodeURIComponent(
-    [
-      `Name: ${data.get("name")}`,
-      `E-Mail: ${data.get("email")}`,
-      `Antwort: ${data.get("answer")}`,
-      `Kinder: ${data.get("children") || "-"}`,
-      `Zeitraum: ${data.get("stay") || "-"}`,
-    ].join("\n")
-  );
-
-  window.location.href = `mailto:julia.daniel@email.at?subject=${subject}&body=${body}`;
+form.addEventListener("submit", () => {
   statusMessage.textContent =
     language === "de"
-      ? "Danke! Dein E-Mail-Programm wird geöffnet."
-      : "Thank you! Your email app is opening.";
+      ? "Danke, euer RSVP wurde gesendet."
+      : "Thank you, your RSVP has been sent.";
+
+  window.setTimeout(() => {
+    form.reset();
+  }, 600);
 });
