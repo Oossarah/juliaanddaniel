@@ -530,10 +530,10 @@ html.js .infos.is-visible .shape-card {
 
 .hotel-row {
   display: grid;
-  grid-template-columns: minmax(14rem, 2fr) minmax(9rem, 1.2fr) minmax(5rem, .65fr) minmax(13rem, 1.7fr) minmax(6.5rem, .7fr);
+  grid-template-columns: minmax(14rem, 1.9fr) minmax(5rem, .65fr) minmax(18rem, 2.4fr) minmax(6.5rem, .7fr) minmax(5.5rem, .65fr);
   gap: 1.5rem;
   align-items: center;
-  min-width: 58rem;
+  min-width: 64rem;
   border-bottom: 2px solid currentColor;
   padding: 1rem .2rem;
   font-size: var(--type-meta);
@@ -592,7 +592,7 @@ textarea {
   background: transparent;
   font: 500 var(--type-meta)/1.2 var(--sans);
   letter-spacing: .05em;
-  text-transform: uppercase;
+  text-transform: none;
   outline: none;
 }
 
@@ -642,11 +642,13 @@ textarea {
   .nav-shell {
     position: relative;
     grid-template-columns: 1fr auto;
+    min-height: 3rem;
     overflow: visible;
   }
 
   .menu-toggle {
     display: block;
+    width: 3.4rem;
   }
 
   .nav-links {
@@ -675,7 +677,9 @@ textarea {
   }
 
   .nav-links a {
+    width: 100%;
     padding-block: .2rem;
+    text-align: left;
   }
 
   .language-toggle {
@@ -687,12 +691,36 @@ textarea {
   }
 
   .hero {
-    gap: 1.4rem;
-    align-content: center;
+    align-content: stretch;
+  }
+
+  .hero-main {
+    position: absolute;
+    top: calc(50% - clamp(4.8rem, 22vw, 5.8rem));
+    left: 50%;
+    display: grid;
+    justify-items: center;
+    gap: clamp(1.25rem, 4vw, 1.7rem);
+    width: min(100%, calc(100vw - (2 * var(--gutter))));
+    transform: translate(-50%, -50%);
+  }
+
+  .hero h1 {
+    transform: none;
   }
 
   .hero-rsvp {
-    position: static;
+    position: absolute;
+    top: calc(50% + clamp(13.2rem, 61vw, 17.6rem));
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-grid;
+    place-items: center;
+    border: 1.5px solid currentColor;
+    border-radius: 999px;
+    padding: .75rem 1.6rem;
+    min-width: 12rem;
+    text-align: center;
   }
 
   .story,
@@ -753,15 +781,55 @@ textarea {
   }
 
   .hotel-table {
-    overflow-x: auto;
-    padding-bottom: .6rem;
+    overflow: visible;
+    padding-bottom: 0;
+  }
+
+  .hotel-head {
+    display: none;
+  }
+
+  .hotel-row {
+    grid-template-columns: repeat(2, auto);
+    gap: .85rem .35rem;
+    align-items: start;
+    min-width: 0;
+    width: 100%;
+    padding: 1.35rem 0;
+  }
+
+  .hotel-row strong,
+  .hotel-row span {
+    grid-column: 1 / -1;
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .hotel-row strong {
+    font-size: clamp(2rem, 9vw, 3rem);
+    overflow-wrap: normal;
+  }
+
+  .hotel-row span {
+    font-size: var(--type-card-copy);
+    line-height: 1.25;
+  }
+
+  .hotel-row span:first-of-type::before {
+    content: "Distanz: ";
+  }
+
+  .hotel-row a {
+    justify-self: start;
+    min-width: 0;
+    padding: .55rem 1rem;
+    white-space: nowrap;
   }
 }
 
 @media (max-width: 560px) {
   :root {
-    --type-nav: .72rem;
-    --type-hero-title: clamp(4.2rem, 24vw, 6rem);
+    --type-hero-title: clamp(4.8rem, 27vw, 6.8rem);
     --type-serif-copy: clamp(1.45rem, 7.8vw, 2.05rem);
   }
 
@@ -770,11 +838,93 @@ textarea {
   }
 
   .brand {
-    padding-left: .7rem;
+    padding-left: 1rem;
   }
 
   .schedule div {
     grid-template-columns: 4.5rem 1fr;
+  }
+}
+
+@media (max-width: 380px) {
+  :root {
+    --gutter: 1rem;
+    --type-meta: clamp(.88rem, 4.1vw, .96rem);
+    --type-body: clamp(1.06rem, 5vw, 1.2rem);
+    --type-card-copy: clamp(.98rem, 4.8vw, 1.12rem);
+    --type-serif-mid: clamp(1.8rem, 8.4vw, 2.35rem);
+    --type-section-title: clamp(3.2rem, 17vw, 4.2rem);
+    --type-hero-title: clamp(4.1rem, 25vw, 5.85rem);
+  }
+
+  .site-header {
+    padding-inline: .75rem;
+  }
+
+  .nav-shell {
+    min-height: 2.75rem;
+  }
+
+  .brand {
+    padding-left: .75rem;
+    letter-spacing: .06em;
+  }
+
+  .menu-toggle {
+    width: 2.9rem;
+  }
+
+  .hero-main {
+    top: calc(50% - clamp(3.35rem, 16vw, 4.2rem));
+    gap: 1rem;
+  }
+
+  .hero-rsvp {
+    top: calc(50% + clamp(10.7rem, 54vw, 13rem));
+    min-width: 10.75rem;
+    padding: .68rem 1.25rem;
+  }
+
+  .hero-marquee {
+    bottom: .75rem;
+  }
+
+  .section {
+    padding-top: 5.25rem;
+    padding-bottom: 3.75rem;
+  }
+
+  .story,
+  .weekend,
+  .infos,
+  .hotels,
+  .rsvp {
+    gap: 1.75rem;
+  }
+
+  .hotel-row {
+    gap: .75rem .3rem;
+    padding-block: 1.15rem;
+  }
+
+  .hotel-row strong {
+    font-size: clamp(1.85rem, 8.2vw, 2.2rem);
+  }
+
+  .hotel-row span {
+    line-height: 1.32;
+  }
+
+  .hotel-row a {
+    padding: .5rem .82rem;
+    letter-spacing: .06em;
+  }
+
+  input,
+  select,
+  textarea {
+    min-height: 2.8rem;
+    padding-inline: 1.2rem;
   }
 }
 
