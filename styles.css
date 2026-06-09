@@ -117,6 +117,11 @@ body.nav-on-dark .nav-shell {
   padding-left: clamp(.95rem, 1.6vw, 1.35rem);
 }
 
+.brand-heart {
+  font-family: var(--serif);
+  letter-spacing: 0;
+}
+
 .nav-links {
   display: flex;
   align-items: center;
@@ -301,7 +306,7 @@ label span,
   position: sticky;
   top: 8rem;
   order: 2;
-  padding-top: 1rem;
+  padding-top: 0;
   justify-self: center;
   text-align: center;
 }
@@ -323,6 +328,10 @@ label span,
   top: 8rem;
   align-self: start;
   justify-self: center;
+}
+
+.weekend > h2 {
+  margin-top: calc(var(--type-section-title) * -1.05);
 }
 
 .story-column {
@@ -356,6 +365,7 @@ label span,
   display: grid;
   grid-template-columns: minmax(16rem, .9fr) minmax(20rem, 1fr);
   gap: clamp(2rem, 9vw, 8rem);
+  align-items: start;
 }
 
 .timeline {
@@ -445,7 +455,7 @@ label span,
   display: grid;
   grid-template-columns: minmax(20rem, 1.12fr) minmax(20rem, .88fr);
   gap: clamp(2rem, 5.5vw, 5.5rem);
-  align-items: center;
+  align-items: start;
   overflow: clip;
 }
 
@@ -576,7 +586,7 @@ html.js .infos.is-visible .shape-lilac {
 }
 
 .hotels h2 {
-  margin: 3rem auto 4rem;
+  margin: 0 auto 4rem;
   max-width: 48rem;
   font-size: var(--type-section-title);
   text-align: center;
@@ -596,10 +606,9 @@ html.js .infos.is-visible .shape-lilac {
 
 .hotel-row {
   display: grid;
-  grid-template-columns: minmax(14rem, 1.9fr) minmax(5rem, .65fr) minmax(18rem, 2.4fr) minmax(6.5rem, .7fr) minmax(5.5rem, .65fr);
-  gap: 1.5rem;
+  grid-template-columns: minmax(11rem, 1.55fr) minmax(4.8rem, .55fr) minmax(14rem, 2.1fr) max-content max-content;
+  gap: clamp(.75rem, 1.35vw, 1.35rem);
   align-items: center;
-  min-width: 64rem;
   border-bottom: 2px solid currentColor;
   padding: 1rem .2rem;
   font-size: var(--type-meta);
@@ -622,13 +631,6 @@ html.js .infos.is-visible .shape-lilac {
   letter-spacing: .08em;
   text-decoration: none;
   text-transform: uppercase;
-}
-
-@media (min-width: 901px) and (max-width: 1150px) {
-  .hotel-table {
-    overflow-x: auto;
-    padding-bottom: .6rem;
-  }
 }
 
 .rsvp {
@@ -731,19 +733,45 @@ textarea {
 
   .nav-shell {
     position: relative;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr;
     min-width: 0;
     min-height: 3rem;
     overflow: visible;
   }
 
   .brand {
+    justify-self: center;
     min-width: 0;
+    padding-left: 0;
+    text-align: center;
   }
 
   .menu-toggle {
+    position: absolute;
+    inset: 0 0 0 auto;
     display: block;
     width: 3.4rem;
+  }
+
+  .menu-toggle::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: .65rem;
+    height: .65rem;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: translate(-50%, -62%) rotate(45deg);
+  }
+
+  .menu-toggle span {
+    display: none;
+  }
+
+  body.menu-open .menu-toggle::before {
+    transform: translate(-50%, -38%) rotate(225deg);
   }
 
   .nav-links {
@@ -774,11 +802,15 @@ textarea {
   .nav-links a {
     width: 100%;
     padding-block: .2rem;
-    text-align: left;
+    text-align: center;
   }
 
   .language-toggle {
-    display: none;
+    position: absolute;
+    inset: 0 auto 0 0;
+    display: block;
+    width: 3.4rem;
+    justify-self: auto;
   }
 
   .hero-kicker {
@@ -873,6 +905,7 @@ textarea {
   }
 
   .weekend h2 {
+    margin-top: 0;
     font-size: clamp(3.2rem, 14.2vw, 5.05rem);
     line-height: .9;
     color: var(--red);
@@ -974,6 +1007,13 @@ textarea {
     font-style: italic;
     font-weight: 700;
     margin-bottom: .15rem;
+  }
+
+  .timeline-location span {
+    display: inline-block;
+    margin-top: .25rem;
+    font-style: normal;
+    font-weight: 500;
   }
 
   .timeline .date {
@@ -1151,7 +1191,7 @@ textarea {
   }
 
   .brand {
-    padding-left: 1rem;
+    padding-left: 0;
   }
 
   .schedule div {
@@ -1179,11 +1219,15 @@ textarea {
   }
 
   .brand {
-    padding-left: .75rem;
+    padding-left: 0;
     letter-spacing: .06em;
   }
 
   .menu-toggle {
+    width: 2.9rem;
+  }
+
+  .language-toggle {
     width: 2.9rem;
   }
 
