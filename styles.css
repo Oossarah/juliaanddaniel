@@ -308,6 +308,7 @@ label span,
 .story h2,
 .weekend h2,
 .infos h2,
+.hotels h2,
 .rsvp h2 {
   font-size: var(--type-section-title);
   text-align: center;
@@ -813,8 +814,8 @@ textarea {
     place-items: center;
     border: 1.5px solid currentColor;
     border-radius: 999px;
-    padding: .75rem 1.9rem;
-    min-width: 15.25rem;
+    padding: .68rem 1.35rem;
+    min-width: 12.9rem;
     text-align: center;
   }
 
@@ -823,6 +824,15 @@ textarea {
   .infos,
   .rsvp {
     grid-template-columns: 1fr;
+  }
+
+  .weekend {
+    min-height: auto;
+    margin: 5.5rem var(--gutter) 4rem;
+    padding: 2.4rem clamp(1.3rem, 5vw, 2rem) 2.8rem;
+    border-radius: 1.25rem;
+    color: var(--ink);
+    background: var(--red);
   }
 
   .sticky-title {
@@ -841,13 +851,32 @@ textarea {
     text-align: center;
   }
 
+  .weekend h2 {
+    color: inherit;
+  }
+
+  .weekend h2::before {
+    content: "FEIERT MIT UNS";
+    display: block;
+    margin-bottom: 1.05rem;
+    font-family: var(--sans);
+    font-size: var(--type-meta);
+    font-weight: 700;
+    letter-spacing: .04em;
+    line-height: 1;
+  }
+
+  html[lang="en"] .weekend h2::before {
+    content: "CELEBRATE WITH US";
+  }
+
   .infos h2 {
     order: -1;
   }
 
   .timeline {
     gap: 1.45rem;
-    width: calc(100vw - (2 * var(--gutter)));
+    width: 100%;
     max-width: 100%;
     margin-inline: auto;
     text-align: center;
@@ -882,7 +911,9 @@ textarea {
   }
 
   .timeline h3 {
-    font-size: clamp(2.9rem, 12vw, 4rem);
+    font-size: clamp(3rem, 12vw, 4.4rem);
+    color: inherit;
+    text-transform: uppercase;
   }
 
   .timeline-location {
@@ -903,6 +934,7 @@ textarea {
   .timeline-map {
     flex: 0 0 auto !important;
     margin-top: .35rem;
+    border-color: currentColor;
   }
 
   .timeline-block + .timeline-map {
@@ -911,8 +943,15 @@ textarea {
 
   .timeline-links {
     flex: 0 0 100%;
+    display: grid;
     justify-content: center;
-    margin-top: .25rem;
+    justify-items: center;
+    margin-top: 1.2rem;
+  }
+
+  .timeline-links a {
+    min-width: min(100%, 16rem);
+    text-align: center;
   }
 
   .schedule {
@@ -934,10 +973,6 @@ textarea {
 
   .schedule dt::after {
     content: " · ";
-  }
-
-  .hotels h2 {
-    font-size: clamp(3.2rem, 13.5vw, 5.2rem);
   }
 
   .info-shapes {
@@ -1042,10 +1077,6 @@ textarea {
     padding-left: 1rem;
   }
 
-  .hotels h2 {
-    font-size: clamp(2.75rem, 12vw, 3.4rem);
-  }
-
   .schedule div {
     grid-template-columns: 4.5rem 1fr;
   }
@@ -1086,8 +1117,9 @@ textarea {
 
   .hero-rsvp {
     top: calc(50% + clamp(11.9rem, 58vw, 14.25rem));
-    min-width: 14.2rem;
-    padding: .68rem 1.35rem;
+    min-width: 12.25rem;
+    padding: .6rem 1.1rem;
+    font-size: .88rem;
   }
 
   .hero-marquee {
@@ -1114,10 +1146,6 @@ textarea {
 
   .hotel-row strong {
     font-size: clamp(1.85rem, 8.2vw, 2.2rem);
-  }
-
-  .hotels h2 {
-    font-size: clamp(2.45rem, 11.8vw, 2.85rem);
   }
 
   .hotel-row span {
