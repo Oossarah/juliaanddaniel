@@ -16,7 +16,7 @@
   --type-serif-copy: clamp(1.45rem, 2.55vw, 2.15rem);
   --type-h3: clamp(2.25rem, 4.1vw, 3.45rem);
   --type-serif-mid: var(--type-h3);
-  --type-section-title: clamp(4rem, 8.6vw, 7.5rem);
+  --type-section-title: clamp(3.7rem, 8vw, 7rem);
   --type-hero-title: clamp(5.25rem, 13.5vw, 10.5rem);
 }
 
@@ -326,12 +326,12 @@ label span,
 }
 
 .story-column {
-  max-width: 39rem;
+  max-width: 42rem;
   text-align: center;
 }
 
 .story-column p {
-  margin: 0 auto clamp(2.2rem, 4.5vw, 3.8rem);
+  margin: 0 auto clamp(2.2rem, 4vw, 3.2rem);
   max-width: 34rem;
   font-family: var(--serif);
   font-size: var(--type-serif-copy);
@@ -341,21 +341,15 @@ label span,
 
 .story-photo {
   display: block;
-  margin: .4rem auto 2.7rem;
-  max-width: min(68%, 18rem);
+  margin: .4rem auto clamp(2.4rem, 5vw, 4rem);
+  max-width: min(76%, 24rem);
   height: auto;
   object-fit: cover;
 }
 
-.photo-soft,
-.photo-tall {
-  border-radius: 6px;
-}
-
-.photo-round {
-  width: min(58%, 16rem);
-  aspect-ratio: 1;
-  border-radius: 50%;
+.story-polaroid {
+  transform: rotate(-7deg);
+  filter: drop-shadow(0 .75rem 1.2rem rgb(88 25 19 / .12));
 }
 
 .weekend {
@@ -819,9 +813,11 @@ textarea {
     place-items: center;
     border: 1.5px solid currentColor;
     border-radius: 999px;
-    padding: .68rem 1.35rem;
-    min-width: 12.9rem;
+    width: calc(100vw - 2rem);
+    min-height: 3rem;
+    padding: 0 1.35rem;
     text-align: center;
+    white-space: nowrap;
   }
 
   .story,
@@ -833,11 +829,10 @@ textarea {
 
   .weekend {
     min-height: auto;
-    margin: 5.5rem var(--gutter) 4rem;
-    padding: 2.4rem clamp(1.3rem, 5vw, 2rem) 2.8rem;
-    border-radius: 1.25rem;
-    color: var(--ink);
-    background: var(--red);
+    margin: 5.5rem 0 4rem;
+    padding: 1.9rem var(--gutter) 0;
+    color: var(--red);
+    background: transparent;
   }
 
   .sticky-title {
@@ -856,23 +851,41 @@ textarea {
     text-align: center;
   }
 
+  .story-column {
+    max-width: 100%;
+  }
+
+  .story-column p {
+    max-width: 32rem;
+    margin-bottom: clamp(1.8rem, 7vw, 2.6rem);
+    line-height: 1.12;
+  }
+
+  .story-polaroid {
+    max-width: min(78vw, 24rem);
+    margin-block: .2rem clamp(2.1rem, 8vw, 3rem);
+  }
+
   .weekend h2 {
-    color: inherit;
+    font-size: clamp(3.2rem, 14.2vw, 5.05rem);
+    line-height: .9;
+    color: var(--red);
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  .hotels h2 {
+    font-size: clamp(2.9rem, 11.2vw, 4.5rem);
+    overflow-wrap: normal;
+    word-break: normal;
   }
 
   .weekend h2::before {
-    content: "FEIERT MIT UNS";
-    display: block;
-    margin-bottom: 1.05rem;
-    font-family: var(--sans);
-    font-size: var(--type-meta);
-    font-weight: 700;
-    letter-spacing: .04em;
-    line-height: 1;
+    content: none;
   }
 
   html[lang="en"] .weekend h2::before {
-    content: "CELEBRATE WITH US";
+    content: none;
   }
 
   .infos h2 {
@@ -880,10 +893,11 @@ textarea {
   }
 
   .timeline {
-    gap: 1.45rem;
+    gap: 1.25rem;
     width: 100%;
     max-width: 100%;
     margin-inline: auto;
+    margin-top: clamp(2.35rem, 9vw, 3.45rem);
     text-align: center;
   }
 
@@ -891,9 +905,22 @@ textarea {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: .75rem .65rem;
-    padding: 1.25rem 0 1.55rem;
+    gap: 1.05rem .65rem;
+    border-radius: 1.25rem;
+    padding: clamp(2.05rem, 7vw, 2.95rem) clamp(1.55rem, 5.8vw, 2.5rem);
+    color: var(--blush);
+    background: var(--red);
+    font-size: var(--type-card-copy);
+    line-height: 1.26;
     text-align: center;
+  }
+
+  .timeline article + article {
+    padding-top: clamp(2.05rem, 7vw, 2.95rem);
+  }
+
+  .timeline article:last-child {
+    padding-bottom: clamp(2.05rem, 7vw, 2.95rem);
   }
 
   .timeline article > * {
@@ -901,14 +928,18 @@ textarea {
   }
 
   .timeline article p {
-    max-width: 34rem;
+    max-width: 31rem;
+  }
+
+  .timeline article > p:not(.date):not(.timeline-location) {
+    order: 3;
   }
 
   .timeline-block {
     display: grid;
-    gap: .6rem;
+    gap: 1.2rem;
     justify-items: center;
-    margin-top: .35rem;
+    margin-top: .15rem;
   }
 
   .timeline-block p {
@@ -916,56 +947,92 @@ textarea {
   }
 
   .timeline h3 {
+    order: 1;
+    font-size: var(--type-h3);
+    line-height: .95;
     color: inherit;
     text-transform: uppercase;
   }
 
+  .timeline h3::before {
+    content: "";
+    display: block;
+    width: 100%;
+    border-top: 2px solid currentColor;
+    margin: 0 0 1.05rem;
+  }
+
   .timeline-location {
+    order: 3;
+    font-size: var(--type-card-copy);
+    font-style: italic;
     font-weight: 700;
-    margin-bottom: .35rem;
+    margin-bottom: .15rem;
   }
 
   .timeline .date {
-    display: grid;
-    place-items: center;
+    order: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .34rem;
     border-top: 2px solid currentColor;
     border-bottom: 2px solid currentColor;
-    padding-block: .35rem;
+    margin-top: .25rem;
+    padding-block: .55rem;
     width: 100%;
+    font-size: var(--type-card-copy);
+    font-weight: 700;
     text-align: center;
   }
 
+  .timeline .date::before,
+  .timeline .date::after {
+    content: "·";
+  }
+
+  .timeline-block {
+    order: 4;
+  }
+
   .timeline-map {
+    order: 5;
     flex: 0 0 auto !important;
-    margin-top: .35rem;
+    min-width: min(100%, 16rem);
+    margin-top: .55rem;
     border-color: currentColor;
+    padding-block: .58rem;
   }
 
   .timeline-block + .timeline-map {
-    margin-top: 1rem;
+    margin-top: 1.1rem;
   }
 
   .timeline-links {
+    order: 4;
     flex: 0 0 100%;
     display: grid;
+    gap: .8rem;
     justify-content: center;
     justify-items: center;
-    margin-top: 1.2rem;
+    margin-top: 1.15rem;
   }
 
   .timeline-links a {
     min-width: min(100%, 16rem);
+    padding-block: .58rem;
     text-align: center;
   }
 
   .schedule {
     display: grid;
-    gap: .72rem;
+    gap: .35rem;
     margin-top: 0;
   }
 
   .schedule div {
     display: block;
+    font-size: var(--type-card-copy);
     font-weight: 700;
     line-height: 1.25;
   }
@@ -1092,7 +1159,7 @@ textarea {
     --type-body: clamp(1.06rem, 5vw, 1.2rem);
     --type-card-copy: clamp(.98rem, 4.8vw, 1.12rem);
     --type-h3: clamp(1.8rem, 8.4vw, 2.35rem);
-    --type-section-title: clamp(3.2rem, 17vw, 4.2rem);
+    --type-section-title: clamp(2.95rem, 15.8vw, 3.85rem);
     --type-hero-title: clamp(4.1rem, 25vw, 5.85rem);
   }
 
@@ -1120,9 +1187,10 @@ textarea {
 
   .hero-rsvp {
     top: calc(50% + clamp(11.9rem, 58vw, 14.25rem));
-    min-width: 12.25rem;
-    padding: .6rem 1.1rem;
-    font-size: .88rem;
+    width: calc(100vw - 1.5rem);
+    min-height: 2.75rem;
+    padding: 0 1.1rem;
+    font-size: .82rem;
   }
 
   .hero-marquee {
@@ -1140,6 +1208,18 @@ textarea {
   .hotels,
   .rsvp {
     gap: 1.75rem;
+  }
+
+  .weekend h2 {
+    font-size: clamp(2.85rem, 14vw, 3.45rem);
+  }
+
+  .hotels h2 {
+    font-size: clamp(2.6rem, 12.2vw, 3.1rem);
+  }
+
+  .timeline article {
+    padding-inline: 1rem;
   }
 
   .hotel-row {
