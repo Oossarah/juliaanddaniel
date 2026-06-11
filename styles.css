@@ -4,6 +4,7 @@
   --burgundy: #581913;
   --lilac: #d9bfdf;
   --lime: #d7ff00;
+  --sky: #9ec7e8;
   --ink: #431611;
   --soft-red: #ff8f92;
   --gutter: clamp(1.4rem, 4vw, 3rem);
@@ -11,8 +12,8 @@
   --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, Helvetica, sans-serif;
   --type-nav: var(--type-meta);
   --type-meta: clamp(.95rem, 1.35vw, 1.18rem);
-  --type-body: clamp(1.25rem, 1.9vw, 1.75rem);
   --type-card-copy: clamp(1.05rem, 1.55vw, 1.32rem);
+  --type-body: var(--type-card-copy);
   --type-serif-copy: clamp(1.45rem, 2.55vw, 2.15rem);
   --type-h3: clamp(2.25rem, 4.1vw, 3.45rem);
   --type-serif-mid: var(--type-h3);
@@ -70,6 +71,98 @@ svg {
 
 a {
   color: inherit;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.password-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  min-height: 100svh;
+  background: var(--blush);
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  transition: opacity .35s ease, visibility .35s ease;
+}
+
+.password-overlay.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+body.password-locked {
+  overflow: hidden;
+}
+
+.password-heart {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100vw;
+  height: 100svh;
+  max-width: none;
+  object-fit: fill;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+  pointer-events: none;
+  user-select: none;
+}
+
+.password-form {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  gap: .95rem;
+  width: min(24rem, calc(100vw - 3rem));
+}
+
+.password-title {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(.98rem, 1.5vw, 1.25rem);
+  font-weight: 500;
+  letter-spacing: .1em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.password-title span {
+  font-family: var(--serif);
+  letter-spacing: 0;
+}
+
+.password-form input {
+  min-height: clamp(2.6rem, 3.6vw, 3rem);
+  border-color: var(--ink);
+  color: var(--ink);
+  text-align: center;
+  font-size: clamp(.98rem, 1.5vw, 1.25rem);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.password-form input::placeholder {
+  color: var(--ink);
+}
+
+.password-error {
+  min-height: 1.2rem;
+  margin: 0;
+  color: var(--ink);
+  font-size: var(--type-meta);
+  text-align: center;
 }
 
 .site-header {
@@ -331,7 +424,7 @@ label span,
 }
 
 .weekend > h2 {
-  margin-top: calc(var(--type-section-title) * -1.05);
+  margin-top: 0;
 }
 
 .story-column {
@@ -394,8 +487,14 @@ label span,
 }
 
 .timeline h3 {
-  margin-top: .65rem;
+  margin-top: 1.05rem;
   font-size: var(--type-h3);
+}
+
+@media (min-width: 901px) {
+  .timeline h3 br {
+    display: none;
+  }
 }
 
 .schedule {
@@ -453,24 +552,32 @@ label span,
 
 .infos {
   display: grid;
-  grid-template-columns: minmax(20rem, 1.12fr) minmax(20rem, .88fr);
-  gap: clamp(2rem, 5.5vw, 5.5rem);
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 4vw, 4rem);
   align-items: start;
   overflow: clip;
 }
 
 .infos h2 {
   max-width: min(100%, 34rem);
+  margin-inline: auto;
   text-align: center;
 }
 
 .info-shapes {
+  position: relative;
   display: grid;
-  gap: clamp(1.1rem, 2.2vw, 1.8rem);
+  grid-template-columns: minmax(17rem, .95fr) minmax(21rem, 1.1fr) minmax(17rem, .95fr);
+  grid-template-rows: auto auto;
+  gap: clamp(1.2rem, 3.2vw, 3.4rem);
+  align-items: center;
+  width: min(100%, 78rem);
   min-height: 0;
+  margin-inline: auto;
 }
 
 .shape {
+  position: relative;
   display: grid;
   align-content: center;
   justify-items: center;
@@ -495,17 +602,19 @@ label span,
 }
 
 .shape-card {
-  justify-self: center;
-  width: min(82%, 30rem);
-  min-height: 25rem;
-  border-radius: 8px;
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  z-index: 2;
+  width: 100%;
+  min-height: clamp(21rem, 27vw, 29rem);
+  border-radius: 1.1rem;
   color: var(--ink);
   background: var(--lime);
   transform: rotate(-2deg);
 }
 
 html.js .shape-card {
-  transform: translate(-4%, -4%) rotate(5deg);
+  transform: translateY(1.5rem) rotate(5deg);
 }
 
 html.js .infos.is-visible .shape-card {
@@ -514,9 +623,11 @@ html.js .infos.is-visible .shape-card {
 }
 
 .shape-lime {
-  justify-self: center;
-  width: min(100%, 38rem);
-  min-height: 11rem;
+  grid-column: 1;
+  grid-row: 1;
+  z-index: 1;
+  width: 112%;
+  min-height: clamp(9rem, 12vw, 11.5rem);
   border-radius: 999px;
   color: var(--ink);
   background: var(--red);
@@ -524,7 +635,7 @@ html.js .infos.is-visible .shape-card {
 }
 
 html.js .shape-lime {
-  transform: translate(-42%, 12%) rotate(-16deg);
+  transform: translateY(1.5rem) rotate(-14deg);
 }
 
 html.js .infos.is-visible .shape-lime {
@@ -534,21 +645,58 @@ html.js .infos.is-visible .shape-lime {
 }
 
 .shape-lilac {
-  justify-self: center;
-  width: min(86%, 30rem);
+  grid-column: 3;
+  grid-row: 2;
+  z-index: 1;
+  width: 100%;
   aspect-ratio: 1;
   border-radius: 50%;
   background: var(--lilac);
 }
 
+.shape-kids {
+  grid-column: 1;
+  grid-row: 2;
+  width: min(132%, 38rem);
+  aspect-ratio: .82;
+  min-height: clamp(28rem, 38vw, 40rem);
+  color: var(--ink);
+  background: var(--sky);
+  clip-path: polygon(50% 0, 96% 94%, 4% 94%);
+  transform: rotate(-2deg);
+}
+
+.shape-kids h3,
+.shape-kids p {
+  max-width: 68%;
+}
+
+.shape-kids h3 {
+  margin-top: clamp(3rem, 5vw, 5.5rem);
+}
+
+.shape-kids p {
+  margin-top: clamp(1.1rem, 2vw, 1.9rem);
+}
+
 html.js .shape-lilac {
-  transform: translate(-58%, 28%) scale(.96);
+  transform: translateY(1.5rem) scale(.96);
 }
 
 html.js .infos.is-visible .shape-lilac {
   opacity: 1;
   transform: translate(0, 0) scale(1);
   transition-delay: .36s;
+}
+
+html.js .shape-kids {
+  transform: translateY(1.5rem) rotate(-5deg);
+}
+
+html.js .infos.is-visible .shape-kids {
+  opacity: 1;
+  transform: rotate(-2deg);
+  transition-delay: .54s;
 }
 
 .shape-card a {
@@ -613,6 +761,15 @@ html.js .infos.is-visible .shape-lilac {
   padding: 1rem .2rem;
   font-size: var(--type-meta);
   font-weight: 500;
+}
+
+.hotel-head {
+  padding-block: .85rem;
+}
+
+.hotel-head span {
+  justify-self: start;
+  text-align: left;
 }
 
 .hotel-row strong {
@@ -737,6 +894,26 @@ textarea {
     min-width: 0;
     min-height: 3rem;
     overflow: visible;
+  }
+
+  .password-heart {
+    width: 118vw;
+    height: 112svh;
+    transform: translate(-50%, -50%);
+  }
+
+  .password-form {
+    width: min(19rem, calc(100vw - 3rem));
+    gap: .8rem;
+  }
+
+  .password-title {
+    font-size: .95rem;
+  }
+
+  .password-form input {
+    min-height: 2.65rem;
+    font-size: .95rem;
   }
 
   .brand {
@@ -1095,11 +1272,15 @@ textarea {
   .info-shapes {
     min-height: auto;
     display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
     gap: 1rem;
   }
 
   .shape {
     position: static;
+    grid-column: auto;
+    grid-row: auto;
     width: 100%;
     transform: none;
   }
@@ -1107,25 +1288,30 @@ textarea {
   html.js .shape-lime,
   html.js .shape-lilac,
   html.js .shape-card,
+  html.js .shape-kids,
   html.js .infos.is-visible .shape-lime,
   html.js .infos.is-visible .shape-lilac,
-  html.js .infos.is-visible .shape-card {
+  html.js .infos.is-visible .shape-card,
+  html.js .infos.is-visible .shape-kids {
     transform: translateY(1.5rem);
   }
 
   html.js .infos.is-visible .shape-lime,
   html.js .infos.is-visible .shape-lilac,
-  html.js .infos.is-visible .shape-card {
+  html.js .infos.is-visible .shape-card,
+  html.js .infos.is-visible .shape-kids {
     transform: translateY(0);
   }
 
   .shape-lime,
   .shape-lilac,
-  .shape-card {
+  .shape-card,
+  .shape-kids {
     width: 100%;
     aspect-ratio: auto;
     min-height: 13rem;
     border-radius: 8px;
+    clip-path: none;
   }
 
   .hotel-table {
@@ -1203,8 +1389,8 @@ textarea {
   :root {
     --gutter: 1rem;
     --type-meta: clamp(.88rem, 4.1vw, .96rem);
-    --type-body: clamp(1.06rem, 5vw, 1.2rem);
     --type-card-copy: clamp(.98rem, 4.8vw, 1.12rem);
+    --type-body: var(--type-card-copy);
     --type-h3: clamp(1.8rem, 8.4vw, 2.35rem);
     --type-section-title: clamp(2.95rem, 15.8vw, 3.85rem);
     --type-hero-title: clamp(4.1rem, 25vw, 5.85rem);

@@ -9,8 +9,40 @@ const statusMessage = document.querySelector("#formStatus");
 const infoSection = document.querySelector("#infos");
 const darkSections = document.querySelectorAll(".dark");
 const navShell = document.querySelector(".nav-shell");
+const passwordOverlay = document.querySelector("#passwordOverlay");
+const passwordForm = document.querySelector("#passwordForm");
+const passwordInput = document.querySelector("#sitePassword");
+const passwordError = document.querySelector("#passwordError");
+const sitePassword = "07082027";
+const passwordStorageKey = "julia-daniel-password-ok";
 
 let language = "de";
+
+function unlockSite() {
+  sessionStorage.setItem(passwordStorageKey, "true");
+  passwordOverlay?.classList.remove("is-visible");
+  document.body.classList.remove("password-locked");
+}
+
+if (passwordOverlay && sessionStorage.getItem(passwordStorageKey) !== "true") {
+  passwordOverlay.classList.add("is-visible");
+  document.body.classList.add("password-locked");
+  window.setTimeout(() => passwordInput?.focus(), 250);
+}
+
+passwordForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const typedPassword = passwordInput.value.trim().toLowerCase();
+
+  if (typedPassword === sitePassword) {
+    unlockSite();
+    return;
+  }
+
+  passwordError.textContent =
+    language === "de" ? "Bitte versucht es nochmal." : "Please try again.";
+  passwordInput.select();
+});
 
 function setLanguage(nextLanguage) {
   language = nextLanguage;

@@ -18,6 +18,16 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="password-overlay" id="passwordOverlay" aria-modal="true" role="dialog" aria-label="Passwort">
+      <img class="password-heart" src="assets/heart-svgrepo-com.svg" alt="" aria-hidden="true" />
+      <form class="password-form" id="passwordForm">
+        <p class="password-title">Julia <span>♥</span> Daniel</p>
+        <label class="sr-only" for="sitePassword">Passwort</label>
+        <input id="sitePassword" name="password" type="password" placeholder="PASSWORT" autocomplete="current-password" />
+        <p class="password-error" id="passwordError" aria-live="polite"></p>
+      </form>
+    </div>
+
     <header class="site-header" aria-label="Hauptnavigation">
       <nav class="nav-shell">
         <a class="brand" href="#home" data-de="Daniel <span class=&quot;brand-heart&quot;>♥</span> Julia" data-en="Daniel <span class=&quot;brand-heart&quot;>♥</span> Julia">Daniel <span class="brand-heart">♥</span> Julia</a>
@@ -75,9 +85,9 @@
           <h2 data-de="Unsere<br />Geschichte" data-en="Our<br />Story">Unsere<br />Geschichte</h2>
         </aside>
         <div class="story-column">
-          <p data-de="Es begann mit einer Österreicherin und einem spanischen Amerikaner, die sich in China kennengelernt haben. Die nach ein bisschen Hin und Her gemerkt haben, dass sie perfekt füreinander sind!" data-en="It began with an Austrian and a Spanish American who met in China. After a little back and forth, they realized they were perfect for each other!">
+          <p data-de="Es begann mit einer Österreicherin und einem spanischen Amerikaner, die sich in China kennengelernt haben und nach ein bisschen Hin und Her gemerkt haben, dass sie perfekt füreinander sind!" data-en="It began with an Austrian and a Spanish American who met in China. After a little back and forth, they realized they were perfect for each other!">
             Es begann mit einer Österreicherin und einem spanischen Amerikaner,
-            die sich in China kennengelernt haben. Die nach ein bisschen Hin und
+            die sich in China kennengelernt haben und nach ein bisschen Hin und
             Her gemerkt haben, dass sie perfekt füreinander sind!
           </p>
           <img class="story-photo story-polaroid" src="assets/IMG_20230809_0006_Freigestellt.png" alt="Julia und Daniel mit ihren Kindern" />
@@ -94,11 +104,11 @@
         <div class="timeline">
           <article>
             <p class="date" data-de="Samstag, 7. August · 14 Uhr" data-en="Saturday, August 7 · 2 PM">Samstag, 7. August · 14 Uhr</p>
-            <h3 data-de="Der<br />große Tag" data-en="The Big Day">Der<br />große Tag</h3>
+            <h3 data-de="Der<br /> große Tag" data-en="The Big Day">Der<br /> große Tag</h3>
             <p class="timeline-location" data-de="Ort: Laimer Urschlag<br /><span>Am Urschlag 9, 5350 Strobl</span>" data-en="Place: Laimer Urschlag<br /><span>Am Urschlag 9, 5350 Strobl</span>">Ort: Laimer Urschlag<br /><span>Am Urschlag 9, 5350 Strobl</span></p>
             <div class="timeline-block">
-              <p data-de="Wir können es kaum erwarten,<br />unsere Liebe zu feiern und mit all unseren Liebsten die Nacht durchzufeiern!" data-en="We cannot wait to celebrate our love and dance through the night with the people we love most!">
-                Wir können es kaum erwarten,<br />unsere Liebe zu feiern und mit all
+              <p data-de="Wir können es kaum erwarten, unsere Liebe zu feiern und mit all unseren Liebsten die Nacht durchzufeiern!" data-en="We cannot wait to celebrate our love and dance through the night with the people we love most!">
+                Wir können es kaum erwarten, unsere Liebe zu feiern und mit all
                 unseren Liebsten die Nacht durchzufeiern!
               </p>
               <dl class="schedule">
@@ -132,6 +142,9 @@
       </section>
 
       <section class="infos section" id="infos">
+        <h2 data-de="Gut zu<br />wissen" data-en="Good to<br />know">
+          Gut zu<br />wissen
+        </h2>
         <div class="info-shapes">
           <article class="shape shape-card">
             <h3 data-de="Wichtige<br />Info" data-en="Important<br />Information">Wichtige<br />Info</h3>
@@ -156,10 +169,17 @@
               willkommen.
             </p>
           </article>
+          <article class="shape shape-kids">
+            <h3 data-de="Kinder" data-en="Children">Kinder</h3>
+            <p data-de="Kinder sind bei unserer Hochzeit natürlich herzlich willkommen. ♥<br /><br />Gleichzeitig verstehen wir aber auch, wenn ihr euch einen Abend zu zweit gönnen möchtet. Ganz egal, wie ihr euch entscheidet - wir freuen uns." data-en="Children are of course very welcome at our wedding. ♥<br /><br />At the same time, we completely understand if you would like to enjoy an evening for two. Whatever you decide, we are excited.">
+              Kinder sind bei unserer Hochzeit natürlich herzlich willkommen. ♥
+              <br /><br />
+              Gleichzeitig verstehen wir aber auch, wenn ihr euch einen Abend zu
+              zweit gönnen möchtet. Ganz egal, wie ihr euch entscheidet - wir
+              freuen uns.
+            </p>
+          </article>
         </div>
-        <h2 data-de="Gut zu<br />wissen" data-en="Good to<br />know">
-          Gut zu<br />wissen
-        </h2>
       </section>
 
       <section class="hotels section dark" id="hotels">
@@ -174,19 +194,19 @@
             <span role="columnheader" data-de="Adresse" data-en="Address">Adresse</span>
           </div>
           <div class="hotel-row" role="row">
-            <strong>Hotel Stroblerhof</strong><span>27 min</span><span>4-Sterne-Hotel im Ort. Mindestaufenthalt von 3 Nächten. Für Vorab-Buchungen schreibt am besten eine E-Mail direkt an das Hotel mit dem Kennwort „HZ Kaisinger“.</span><a href="https://www.stroblerhof.at/" aria-label="Website Hotel Stroblerhof" target="_blank" rel="noopener">Website</a><a href="https://maps.app.goo.gl/VAGhWzwxW4Tabxni9" aria-label="Adresse Hotel Stroblerhof" target="_blank" rel="noopener">Adresse</a>
+            <strong>Hotel Stroblerhof</strong><span>27 min</span><span data-de="4-Sterne-Hotel im Ort. Mindestaufenthalt von 3 Nächten. Für Vorab-Buchungen schreibt am besten eine E-Mail direkt an das Hotel mit dem Kennwort „HZ Kaisinger“." data-en="4-star hotel in town. Minimum stay of 3 nights. For advance bookings, please email the hotel directly using the keyword “HZ Kaisinger”.">4-Sterne-Hotel im Ort. Mindestaufenthalt von 3 Nächten. Für Vorab-Buchungen schreibt am besten eine E-Mail direkt an das Hotel mit dem Kennwort „HZ Kaisinger“.</span><a href="https://www.stroblerhof.at/" aria-label="Website Hotel Stroblerhof" target="_blank" rel="noopener">Website</a><a href="https://maps.app.goo.gl/VAGhWzwxW4Tabxni9" aria-label="Adresse Hotel Stroblerhof" target="_blank" rel="noopener" data-de="Adresse" data-en="Address">Adresse</a>
           </div>
           <div class="hotel-row" role="row">
-            <strong>Hotel YOUHEY</strong><span>27 min</span><span>Preiswertes Hotel im Ort. Doppelzimmer oder Familienzimmer (4 Betten), inklusive Frühstück.</span><a href="https://www.youhey.at/hotel-youhey/" aria-label="Website Hotel YOUHEY" target="_blank" rel="noopener">Website</a><a href="https://maps.app.goo.gl/sE9FLtbjmP4Bevzi6" aria-label="Adresse Hotel YOUHEY" target="_blank" rel="noopener">Adresse</a>
+            <strong>Hotel YOUHEY</strong><span>27 min</span><span data-de="Preiswertes Hotel im Ort. Doppelzimmer oder Familienzimmer (4 Betten), inklusive Frühstück." data-en="Affordable hotel in town. Double rooms or family rooms (4 beds), breakfast included.">Preiswertes Hotel im Ort. Doppelzimmer oder Familienzimmer (4 Betten), inklusive Frühstück.</span><a href="https://www.youhey.at/hotel-youhey/" aria-label="Website Hotel YOUHEY" target="_blank" rel="noopener">Website</a><a href="https://maps.app.goo.gl/sE9FLtbjmP4Bevzi6" aria-label="Adresse Hotel YOUHEY" target="_blank" rel="noopener" data-de="Adresse" data-en="Address">Adresse</a>
           </div>
           <div class="hotel-row" role="row">
-            <strong>Moosaik Apartments</strong><span>23 min</span><span>Ferienwohnungen / Apartments. Komplett ausgestattet mit eigener Küche.</span><a href="https://www.moosaik.at/appartements" aria-label="Website Moosaik Apartments" target="_blank" rel="noopener">Website</a><a href="https://maps.app.goo.gl/uhkCppZDGiiPBJDt7" aria-label="Adresse Moosaik Apartments" target="_blank" rel="noopener">Adresse</a>
+            <strong>Moosaik Apartments</strong><span>23 min</span><span data-de="Ferienwohnungen / Apartments. Komplett ausgestattet mit eigener Küche." data-en="Holiday apartments. Fully equipped with a private kitchen.">Ferienwohnungen / Apartments. Komplett ausgestattet mit eigener Küche.</span><a href="https://www.moosaik.at/appartements" aria-label="Website Moosaik Apartments" target="_blank" rel="noopener">Website</a><a href="https://maps.app.goo.gl/uhkCppZDGiiPBJDt7" aria-label="Adresse Moosaik Apartments" target="_blank" rel="noopener" data-de="Adresse" data-en="Address">Adresse</a>
           </div>
           <div class="hotel-row" role="row">
-            <strong>Gasthof Kleefeld Hotel</strong><span>45-60 min</span><span>Hotel außerhalb des Ortes gelegen. Mit großem Außenbereich, Wildpark und einem Streichelzoo.</span><a href="https://www.kleefeld.at/" aria-label="Website Gasthof Kleefeld Hotel" target="_blank" rel="noopener">Website</a><a href="https://maps.app.goo.gl/aqQtKwxj3y3YX9E3A" aria-label="Adresse Gasthof Kleefeld Hotel" target="_blank" rel="noopener">Adresse</a>
+            <strong>Gasthof Kleefeld Hotel</strong><span>45-60 min</span><span data-de="Hotel außerhalb des Ortes gelegen. Mit großem Außenbereich, Wildpark und einem Streichelzoo." data-en="Hotel located outside of town, with a large outdoor area, wildlife park and petting zoo.">Hotel außerhalb des Ortes gelegen. Mit großem Außenbereich, Wildpark und einem Streichelzoo.</span><a href="https://www.kleefeld.at/" aria-label="Website Gasthof Kleefeld Hotel" target="_blank" rel="noopener">Website</a><a href="https://maps.app.goo.gl/aqQtKwxj3y3YX9E3A" aria-label="Adresse Gasthof Kleefeld Hotel" target="_blank" rel="noopener" data-de="Adresse" data-en="Address">Adresse</a>
           </div>
           <div class="hotel-row" role="row">
-            <strong>Kirchenwirt</strong><span>27 min</span><span>Hotel mit mehreren Standorten im Ort (Haupthaus: 4 Sterne). Die Online-Buchung ist ab Ende Juli möglich.</span><a href="https://www.kirchenwirt.eu/" aria-label="Website Kirchenwirt" target="_blank" rel="noopener">Website</a><a href="https://maps.app.goo.gl/MULQ33R8JwSWuDGS7" aria-label="Adresse Kirchenwirt" target="_blank" rel="noopener">Adresse</a>
+            <strong>Kirchenwirt</strong><span>27 min</span><span data-de="Hotel mit mehreren Standorten im Ort (Haupthaus: 4 Sterne). Die Online-Buchung ist ab Ende Juli möglich." data-en="Hotel with several locations in town (main building: 4 stars). Online booking will be available from the end of July.">Hotel mit mehreren Standorten im Ort (Haupthaus: 4 Sterne). Die Online-Buchung ist ab Ende Juli möglich.</span><a href="https://www.kirchenwirt.eu/" aria-label="Website Kirchenwirt" target="_blank" rel="noopener">Website</a><a href="https://maps.app.goo.gl/MULQ33R8JwSWuDGS7" aria-label="Adresse Kirchenwirt" target="_blank" rel="noopener" data-de="Adresse" data-en="Address">Adresse</a>
           </div>
         </div>
       </section>
@@ -204,7 +224,7 @@
           <input type="hidden" name="source" value="julia-daniel-wedding-site" />
           <label>
             <span data-de="Name" data-en="Name">Name</span>
-            <input name="name" type="text" placeholder="Euer Name" required />
+            <input name="name" type="text" placeholder="Vorname Nachname" required />
           </label>
           <label>
             <span data-de="E-Mail" data-en="Email">E-Mail</span>
@@ -213,15 +233,23 @@
           <label>
             <span data-de="Antwort" data-en="Reply">Antwort</span>
             <select name="response" required>
-              <option value="Ich bin gerne dabei" data-de="Ich bin gerne dabei" data-en="Ich bin gerne dabei">Ich bin gerne dabei</option>
-              <option value="Leider kann ich nicht kommen" data-de="Leider kann ich nicht kommen" data-en="Leider kann ich nicht kommen">Leider kann ich nicht kommen</option>
+              <option value="Ich komme gerne" data-de="Ich komme gerne" data-en="I will gladly attend">Ich komme gerne</option>
+              <option value="Ich komme leider nicht" data-de="Ich komme leider nicht" data-en="Unfortunately, I cannot attend">Ich komme leider nicht</option>
+              <option value="Ich bin mir noch nicht sicher" data-de="Ich bin mir noch nicht sicher" data-en="I am not sure yet">Ich bin mir noch nicht sicher</option>
+            </select>
+          </label>
+          <label>
+            <span data-de="Begleitung" data-en="Plus one">Begleitung</span>
+            <select name="plus_one">
+              <option value="Ich komme alleine" data-de="Ich komme alleine" data-en="I will come alone">Ich komme alleine</option>
+              <option value="Ich bringe eine Begleitung mit" data-de="Ich bringe eine Begleitung mit" data-en="I will bring a plus one">Ich bringe eine Begleitung mit</option>
             </select>
           </label>
           <label>
             <span data-de="Kinder" data-en="Children">Kinder</span>
             <select name="children">
-              <option value="Ich komme ohne Kinder" data-de="Ich komme ohne Kinder" data-en="Ich komme ohne Kinder">Ich komme ohne Kinder</option>
-              <option value="Ich komme mit Kindern" data-de="Ich komme mit Kindern" data-en="Ich komme mit Kindern">Ich komme mit Kindern</option>
+              <option value="Ich komme ohne Kinder" data-de="Ich komme ohne Kinder" data-en="I will come without children">Ich komme ohne Kinder</option>
+              <option value="Ich komme mit Kindern" data-de="Ich komme mit Kindern" data-en="I will come with children">Ich komme mit Kindern</option>
             </select>
           </label>
           <label>
