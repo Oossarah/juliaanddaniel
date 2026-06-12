@@ -25,7 +25,7 @@
         <label class="sr-only" for="sitePassword">Passwort</label>
         <div class="password-field">
           <input id="sitePassword" name="password" type="password" placeholder="PASSWORT" autocomplete="current-password" />
-          <button class="password-submit" type="submit" aria-label="Passwort abschicken">↓</button>
+          <button class="password-submit" type="submit" aria-label="Passwort abschicken">→</button>
         </div>
         <p class="password-error" id="passwordError" aria-live="polite"></p>
       </form>
@@ -214,7 +214,10 @@
           target="rsvp-target"
           aria-label="RSVP form"
         >
-          <input type="hidden" name="source" value="julia-daniel-wedding-site" />
+          <input type="hidden" id="legacyPlusOneField" name="children" value="Ich komme alleine" />
+          <input type="hidden" id="legacyChildrenField" name="stay" value="Ich komme ohne Kinder" />
+          <input type="hidden" id="legacyStayField" name="source" value="" />
+          <input type="hidden" name="site_source" value="julia-daniel-wedding-site" />
           <label>
             <span data-de="Name" data-en="Name">Name</span>
             <input
@@ -240,14 +243,14 @@
           </label>
           <label>
             <span data-de="Begleitung" data-en="Plus one">Begleitung</span>
-            <select name="plus_one">
+            <select id="plusOneSelect" data-field="plus_one">
               <option value="Ich komme alleine" data-de="Ich komme alleine" data-en="I will come alone">Ich komme alleine</option>
               <option value="Ich bringe eine Begleitung mit" data-de="Ich bringe eine Begleitung mit" data-en="I will bring a plus one">Ich bringe eine Begleitung mit</option>
             </select>
           </label>
           <label>
             <span data-de="Kinder" data-en="Children">Kinder</span>
-            <select name="children">
+            <select id="childrenSelect" data-field="children">
               <option value="Ich komme ohne Kinder" data-de="Ich komme ohne Kinder" data-en="I will come without children">Ich komme ohne Kinder</option>
               <option value="Ich komme mit Kindern" data-de="Ich komme mit Kindern" data-en="I will come with children">Ich komme mit Kindern</option>
             </select>
@@ -255,7 +258,7 @@
           <label>
             <span data-de="Zeitraum" data-en="Stay">Zeitraum</span>
             <textarea
-              name="stay"
+              id="stayInput"
               placeholder="Ich weiß es noch nicht&#10;Ich komme von X. bis X.X."
               data-placeholder-de="Ich weiß es noch nicht&#10;Ich komme von X. bis X.X."
               data-placeholder-en="I don't know yet&#10;I will be there from X. to X.X."

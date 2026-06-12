@@ -28,16 +28,21 @@ function doGet() {
 function doPost(event) {
   const sheet = getSheet();
   const data = event.parameter || {};
+  const usesNewFields = data.plus_one !== undefined;
+  const plusOne = usesNewFields ? data.plus_one : data.children;
+  const children = usesNewFields ? data.children : data.stay;
+  const stay = usesNewFields ? data.stay : data.source;
+  const source = data.site_source || (usesNewFields ? data.source : "");
 
   sheet.appendRow([
     new Date(),
     data.name || "",
     data.email || "",
     data.response || "",
-    data.plus_one || "",
-    data.children || "",
-    data.stay || "",
-    data.source || "",
+    plusOne || "",
+    children || "",
+    stay || "",
+    source || "",
   ]);
 
   return HtmlService.createHtmlOutput("OK");

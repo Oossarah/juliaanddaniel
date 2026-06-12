@@ -9,6 +9,12 @@ const placeholderNodes = document.querySelectorAll(
 );
 const form = document.querySelector("#rsvpForm");
 const statusMessage = document.querySelector("#formStatus");
+const plusOneSelect = document.querySelector("#plusOneSelect");
+const childrenSelect = document.querySelector("#childrenSelect");
+const stayInput = document.querySelector("#stayInput");
+const legacyPlusOneField = document.querySelector("#legacyPlusOneField");
+const legacyChildrenField = document.querySelector("#legacyChildrenField");
+const legacyStayField = document.querySelector("#legacyStayField");
 const infoSection = document.querySelector("#infos");
 const darkSections = document.querySelectorAll(".dark");
 const navShell = document.querySelector(".nav-shell");
@@ -18,8 +24,14 @@ const passwordInput = document.querySelector("#sitePassword");
 const passwordError = document.querySelector("#passwordError");
 const sitePassword = "07082027";
 const passwordStorageKey = "julia-daniel-password-ok";
+const browserLanguages = navigator.languages?.length
+  ? navigator.languages
+  : [navigator.language || ""];
+const prefersGerman = browserLanguages.some((browserLanguage) =>
+  browserLanguage.toLowerCase().startsWith("de")
+);
 
-let language = "de";
+let language = prefersGerman ? "de" : "en";
 
 function unlockSite() {
   sessionStorage.setItem(passwordStorageKey, "true");
@@ -31,8 +43,11 @@ function unlockSite() {
     const previousScrollBehavior = document.documentElement.style.scrollBehavior;
     document.documentElement.style.scrollBehavior = "auto";
     window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
     document.documentElement.scrollTop = 0;
+    document.documentElement.scrollLeft = 0;
     document.body.scrollTop = 0;
+    document.body.scrollLeft = 0;
     document.documentElement.style.scrollBehavior = previousScrollBehavior;
   };
 
@@ -78,6 +93,8 @@ languageButton.addEventListener("click", () => {
   setLanguage(language === "de" ? "en" : "de");
 });
 
+setLanguage(language);
+
 menuButton?.addEventListener("click", () => {
   const menuOpen = document.body.classList.toggle("menu-open");
   menuButton.setAttribute("aria-expanded", String(menuOpen));
@@ -122,10 +139,30 @@ if (darkSections.length) {
   window.addEventListener("resize", updateNavigationTheme);
 }
 
+function syncRsvpFields() {
+  if (legacyPlusOneField && plusOneSelect) {
+    legacyPlusOneField.value = plusOneSelect.value;
+  }
+
+  if (legacyChildrenField && childrenSelect) {
+    legacyChildrenField.value = childrenSelect.value;
+  }
+
+  if (legacyStayField && stayInput) {
+    legacyStayField.value = stayInput.value;
+  }
+}
+
+plusOneSelect?.addEventListener("change", syncRsvpFields);
+childrenSelect?.addEventListener("change", syncRsvpFields);
+stayInput?.addEventListener("input", syncRsvpFields);
+syncRsvpFields();
+
 form.addEventListener("submit", () => {
+  syncRsvpFields();
   statusMessage.textContent =
     language === "de"
-      ? "Danke, euer RSVP wurde gesendet."
+      ? "Danke, deine Zusage wurde gesendet."
       : "Thank you, your RSVP has been sent.";
 
   window.setTimeout(() => {
