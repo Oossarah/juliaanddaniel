@@ -29,6 +29,7 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  overflow-x: clip;
   width: 100%;
   max-width: 100%;
   overscroll-behavior-x: none;
@@ -55,6 +56,7 @@ body {
   min-width: 0;
   position: relative;
   overflow-x: hidden;
+  overflow-x: clip;
   overscroll-behavior-x: none;
   touch-action: pan-y;
 }
@@ -64,6 +66,7 @@ main,
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
+  overflow-x: clip;
 }
 
 img,
@@ -212,9 +215,10 @@ body.password-locked {
   inset: 0 0 auto;
   z-index: 10;
   padding: clamp(1rem, 2.8vw, 2.25rem) var(--gutter) 0;
-  width: auto;
-  max-width: none;
-  overflow: visible;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+  overflow-y: visible;
 }
 
 .nav-shell {
@@ -331,6 +335,7 @@ body.menu-open .menu-toggle span {
   padding-bottom: 0;
   text-align: center;
   overflow: hidden;
+  overflow: clip;
   contain: paint;
 }
 
@@ -344,6 +349,7 @@ body.menu-open .menu-toggle span {
   width: 100%;
   max-width: 100%;
   overflow: hidden;
+  overflow: clip;
   color: var(--red);
   pointer-events: none;
   white-space: nowrap;
@@ -604,7 +610,7 @@ label span,
   grid-template-columns: 1fr;
   gap: clamp(2rem, 4vw, 4rem);
   align-items: start;
-  overflow: hidden;
+  overflow: clip;
 }
 
 .infos h2 {
@@ -1036,15 +1042,14 @@ textarea {
   .hero-rsvp {
     position: absolute;
     top: calc(50% + clamp(13.9rem, 64vw, 18.6rem));
-    right: 1rem;
-    left: 1rem;
-    transform: none;
+    left: 50%;
+    transform: translateX(-50%);
     display: inline-grid;
     place-items: center;
     border: 1.5px solid currentColor;
     border-radius: 999px;
-    width: auto;
-    max-width: none;
+    width: calc(100% - 2rem);
+    max-width: calc(100% - 2rem);
     min-height: 3rem;
     padding: 0 1.35rem;
     text-align: center;
@@ -1440,10 +1445,8 @@ textarea {
 
   .hero-rsvp {
     top: calc(50% + clamp(11.9rem, 58vw, 14.25rem));
-    right: .75rem;
-    left: .75rem;
-    width: auto;
-    max-width: none;
+    width: calc(100% - 1.5rem);
+    max-width: calc(100% - 1.5rem);
     min-height: 2.75rem;
     padding: 0 1.1rem;
     font-size: .82rem;
