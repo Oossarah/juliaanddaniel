@@ -4,6 +4,9 @@ const languageButton = document.querySelector(".language-toggle");
 const menuButton = document.querySelector(".menu-toggle");
 const navigationLinks = document.querySelectorAll(".nav-links a");
 const translatable = document.querySelectorAll("[data-de][data-en]");
+const placeholderNodes = document.querySelectorAll(
+  "[data-placeholder-de][data-placeholder-en]"
+);
 const form = document.querySelector("#rsvpForm");
 const statusMessage = document.querySelector("#formStatus");
 const infoSection = document.querySelector("#infos");
@@ -20,8 +23,22 @@ let language = "de";
 
 function unlockSite() {
   sessionStorage.setItem(passwordStorageKey, "true");
+  passwordInput?.blur();
   passwordOverlay?.classList.remove("is-visible");
   document.body.classList.remove("password-locked");
+
+  const resetScroll = () => {
+    const previousScrollBehavior = document.documentElement.style.scrollBehavior;
+    document.documentElement.style.scrollBehavior = "auto";
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    document.documentElement.style.scrollBehavior = previousScrollBehavior;
+  };
+
+  resetScroll();
+  window.requestAnimationFrame(resetScroll);
+  window.setTimeout(resetScroll, 250);
 }
 
 if (passwordOverlay && sessionStorage.getItem(passwordStorageKey) !== "true") {
@@ -49,6 +66,10 @@ function setLanguage(nextLanguage) {
   document.documentElement.lang = language;
   translatable.forEach((node) => {
     node.innerHTML = node.dataset[language];
+  });
+  placeholderNodes.forEach((node) => {
+    node.placeholder =
+      language === "de" ? node.dataset.placeholderDe : node.dataset.placeholderEn;
   });
   languageButton.textContent = language === "de" ? "EN" : "DE";
 }

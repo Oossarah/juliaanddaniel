@@ -23,7 +23,10 @@
       <form class="password-form" id="passwordForm">
         <p class="password-title">Julia <span>♥</span> Daniel</p>
         <label class="sr-only" for="sitePassword">Passwort</label>
-        <input id="sitePassword" name="password" type="password" placeholder="PASSWORT" autocomplete="current-password" />
+        <div class="password-field">
+          <input id="sitePassword" name="password" type="password" placeholder="PASSWORT" autocomplete="current-password" />
+          <button class="password-submit" type="submit" aria-label="Passwort abschicken">↓</button>
+        </div>
         <p class="password-error" id="passwordError" aria-live="polite"></p>
       </form>
     </div>
@@ -169,16 +172,6 @@
               willkommen.
             </p>
           </article>
-          <article class="shape shape-kids">
-            <h3 data-de="Kinder" data-en="Children">Kinder</h3>
-            <p data-de="Kinder sind bei unserer Hochzeit natürlich herzlich willkommen. ♥<br /><br />Gleichzeitig verstehen wir aber auch, wenn ihr euch einen Abend zu zweit gönnen möchtet. Ganz egal, wie ihr euch entscheidet - wir freuen uns." data-en="Children are of course very welcome at our wedding. ♥<br /><br />At the same time, we completely understand if you would like to enjoy an evening for two. Whatever you decide, we are excited.">
-              Kinder sind bei unserer Hochzeit natürlich herzlich willkommen. ♥
-              <br /><br />
-              Gleichzeitig verstehen wir aber auch, wenn ihr euch einen Abend zu
-              zweit gönnen möchtet. Ganz egal, wie ihr euch entscheidet - wir
-              freuen uns.
-            </p>
-          </article>
         </div>
       </section>
 
@@ -224,7 +217,14 @@
           <input type="hidden" name="source" value="julia-daniel-wedding-site" />
           <label>
             <span data-de="Name" data-en="Name">Name</span>
-            <input name="name" type="text" placeholder="Vorname Nachname" required />
+            <input
+              name="name"
+              type="text"
+              placeholder="Vorname Nachname"
+              data-placeholder-de="Vorname Nachname"
+              data-placeholder-en="First name last name"
+              required
+            />
           </label>
           <label>
             <span data-de="E-Mail" data-en="Email">E-Mail</span>
@@ -254,7 +254,12 @@
           </label>
           <label>
             <span data-de="Zeitraum" data-en="Stay">Zeitraum</span>
-            <textarea name="stay" placeholder="Ich weiß es noch nicht&#10;Ich komme von X. bis X.X."></textarea>
+            <textarea
+              name="stay"
+              placeholder="Ich weiß es noch nicht&#10;Ich komme von X. bis X.X."
+              data-placeholder-de="Ich weiß es noch nicht&#10;Ich komme von X. bis X.X."
+              data-placeholder-en="I don't know yet&#10;I will be there from X. to X.X."
+            ></textarea>
           </label>
           <button type="submit" data-de="RSVP senden" data-en="Send RSVP">RSVP senden</button>
           <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
