@@ -222,6 +222,8 @@ body.password-locked {
 }
 
 .nav-shell {
+  position: relative;
+  z-index: 20;
   display: grid;
   grid-template-columns: minmax(8.5rem, 1fr) auto minmax(3rem, 1fr);
   align-items: center;
@@ -254,6 +256,8 @@ body.nav-on-dark .nav-shell {
 }
 
 .brand {
+  position: relative;
+  z-index: 1;
   padding-left: clamp(.95rem, 1.6vw, 1.35rem);
 }
 
@@ -263,6 +267,8 @@ body.nav-on-dark .nav-shell {
 }
 
 .nav-links {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -270,6 +276,8 @@ body.nav-on-dark .nav-shell {
 }
 
 .menu-toggle {
+  position: relative;
+  z-index: 4;
   display: none;
   justify-self: end;
   width: 3rem;
@@ -278,6 +286,7 @@ body.nav-on-dark .nav-shell {
   color: var(--red);
   background: transparent;
   cursor: pointer;
+  touch-action: manipulation;
 }
 
 .menu-toggle::before {
@@ -312,6 +321,8 @@ body.menu-open .menu-toggle span {
 }
 
 .language-toggle {
+  position: relative;
+  z-index: 4;
   justify-self: end;
   width: clamp(3rem, 4.5vw, 3.8rem);
   height: 100%;
@@ -319,6 +330,7 @@ body.menu-open .menu-toggle span {
   color: var(--red);
   background: transparent;
   cursor: pointer;
+  touch-action: manipulation;
 }
 
 .section {
@@ -940,14 +952,18 @@ textarea {
 
   .brand {
     justify-self: center;
+    max-width: calc(100% - 7rem);
     min-width: 0;
     padding-left: 0;
     text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .menu-toggle {
     position: absolute;
     inset: 0 0 0 auto;
+    z-index: 6;
     display: block;
     width: 3.4rem;
   }
@@ -975,6 +991,7 @@ textarea {
 
   .nav-links {
     position: absolute;
+    z-index: 5;
     top: calc(100% + .45rem);
     left: 0;
     right: 0;

@@ -87,6 +87,16 @@ function setLanguage(nextLanguage) {
       language === "de" ? node.dataset.placeholderDe : node.dataset.placeholderEn;
   });
   languageButton.textContent = language === "de" ? "EN" : "DE";
+  menuButton?.setAttribute(
+    "aria-label",
+    document.body.classList.contains("menu-open")
+      ? language === "de"
+        ? "Menü schließen"
+        : "Close menu"
+      : language === "de"
+        ? "Menü öffnen"
+        : "Open menu"
+  );
 }
 
 languageButton.addEventListener("click", () => {
@@ -95,15 +105,31 @@ languageButton.addEventListener("click", () => {
 
 setLanguage(language);
 
-menuButton?.addEventListener("click", () => {
+menuButton?.addEventListener("click", (event) => {
+  event.preventDefault();
+  event.stopPropagation();
   const menuOpen = document.body.classList.toggle("menu-open");
   menuButton.setAttribute("aria-expanded", String(menuOpen));
+  menuButton.setAttribute(
+    "aria-label",
+    menuOpen
+      ? language === "de"
+        ? "Menü schließen"
+        : "Close menu"
+      : language === "de"
+        ? "Menü öffnen"
+        : "Open menu"
+  );
 });
 
 navigationLinks.forEach((link) => {
   link.addEventListener("click", () => {
     document.body.classList.remove("menu-open");
     menuButton?.setAttribute("aria-expanded", "false");
+    menuButton?.setAttribute(
+      "aria-label",
+      language === "de" ? "Menü öffnen" : "Open menu"
+    );
   });
 });
 
