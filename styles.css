@@ -160,7 +160,7 @@ body.password-locked {
   border-color: var(--ink);
   color: var(--ink);
   text-align: center;
-  font-size: clamp(.98rem, 1.5vw, 1.25rem);
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
   letter-spacing: .12em;
   text-transform: uppercase;
   padding-right: 3.25rem;
@@ -841,7 +841,10 @@ textarea {
   padding: .85rem 1.9rem;
   color: var(--red);
   background: transparent;
-  font: 500 var(--type-meta)/1.2 var(--sans);
+  font-family: var(--sans);
+  font-size: max(1rem, var(--type-meta));
+  font-weight: 500;
+  line-height: 1.2;
   letter-spacing: .05em;
   text-transform: none;
   outline: none;
@@ -932,7 +935,7 @@ textarea {
 
   .password-form input {
     min-height: 2.65rem;
-    font-size: .95rem;
+    font-size: 1rem;
   }
 
   .brand {
